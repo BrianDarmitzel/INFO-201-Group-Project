@@ -1,6 +1,6 @@
-# Which Kind of Car is going to Save the World?
+# WHICH CARS ARE GONNA SAVE THE WORLD?
 
-## Green Cars
+## GREEN CARS
 
 #### Team Members: Brian Darmitzel, Rishabh Goyal, Xiying Huang
 #### Contact Info: briandarmitzel@gmail.com, etc
@@ -43,7 +43,7 @@ Autumn 2019
 ## 4.0 Information Visualizations (Brian)
     - Image visualizations need a caption and do not have to be side by side.
 
-## 5.0 Team Coordination
+## 5.0 Team Coordination (all of us)
     You should document at least the following:
     (a) Weekly time(s) that everyone in the group can get together for at least 2 hours;
     (b) Your individual goal(s) for the project and your roles;
@@ -51,8 +51,8 @@ Autumn 2019
     (d) An commitment on how you will give each other feedback on working
     together and how you will address communication challenges or work breakdowns.
 
-## 6.0 Questions for Teaching Team
+## 6.0 Questions for Teaching Team (all of us)
     - Include questions here!
 
-## 7.0 References
+## 7.0 References (Brian)
     - References to the Information Visualizations we found earlier

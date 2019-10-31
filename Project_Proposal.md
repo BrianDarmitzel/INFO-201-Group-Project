@@ -49,7 +49,7 @@ Autumn 2019
 
 <<<<<<< HEAD
 ## 5.0 Team Coordination
-    You should document at least the following: (a) Weekly meeting time: Thursday 3.30-5.30 pm 
+    You should document at least the following: (a) Weekly meeting time: Thursday 3.30-5.30 pm
     (b) Your individual goal(s) for the project
     and your roles; (c) A commitment on how you will communicate weekly; and (d)
     An commitment on how you will give each other feedback on working together and
@@ -57,7 +57,7 @@ Autumn 2019
 =======
 ## 5.0 Team Coordination (all of us)
     You should document at least the following:
-    (a) Weekly time(s) that everyone in the group can get together for at least 2 hours;
+    (a) Weekly time: Thursday 3.30-4.30 PM
     (b) Your individual goal(s) for the project and your roles;
     (c) A commitment on how you will communicate weekly; and
     (d) An commitment on how you will give each other feedback on working

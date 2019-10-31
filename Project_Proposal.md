@@ -14,7 +14,7 @@ The Information School
 University of Washington
 Autumn 2019
 
-## 1.0 Introduction
+## 1.0 Introduction (Rishabh)
     1.1 Problem Situation
       Describe the general problem situation – Who are the stakeholders? What is the
       setting of the problem? What values and tensions are in play? What policy and ethic
@@ -29,14 +29,14 @@ Autumn 2019
     1.4 How will it be Addressed?
       How will you address the problem [60–100 words]
 
-## 2.0 Research Questions
+## 2.0 Research Questions (Brian)
     Given the problem situation and your discussion of the problem, propose two
     specific research questions.
 
     - Research Question 1 <Text>
     - Research Question 2 <Text>
 
-## 3.0 Possible Data Sets
+## 3.0 Possible Data Sets (Xiying)
     Describe two possible data sets that you might work with. Include name, short
     description [30-60 words], link, and number of observations and number of
     attributes.
@@ -44,18 +44,28 @@ Autumn 2019
     - Data Set Number 1 <Text>
     - Data Set Number 2 <Text>
 
-## 4.0 Information Visualizations
+## 4.0 Information Visualizations (Brian)
     - Image visualizations need a caption and do not have to be side by side.
 
+<<<<<<< HEAD
 ## 5.0 Team Coordination
     You should document at least the following: (a) Weekly meeting time: Thursday 3.30-5.30 pm 
     (b) Your individual goal(s) for the project
     and your roles; (c) A commitment on how you will communicate weekly; and (d)
     An commitment on how you will give each other feedback on working together and
     how you will address communication challenges or work breakdowns.
+=======
+## 5.0 Team Coordination (all of us)
+    You should document at least the following:
+    (a) Weekly time(s) that everyone in the group can get together for at least 2 hours;
+    (b) Your individual goal(s) for the project and your roles;
+    (c) A commitment on how you will communicate weekly; and
+    (d) An commitment on how you will give each other feedback on working
+    together and how you will address communication challenges or work breakdowns.
+>>>>>>> 823ad7161eb04b6aff3300cb21f159ad0e4a4ee7
 
-## 6.0 Questions for Teaching Team
+## 6.0 Questions for Teaching Team (all of us)
     - Include questions here!
 
-## 7.0 References
+## 7.0 References (Brian)
     - References to the Information Visualizations we found earlier

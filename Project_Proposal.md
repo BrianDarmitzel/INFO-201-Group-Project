@@ -1,10 +1,6 @@
 # WHICH CARS ARE GONNA SAVE THE WORLD?
 
-<<<<<<< HEAD
-## Green Cars
-=======
 ## GREEN CARS
->>>>>>> 1be038afedad589e8508a0a8f205fd807da9d09b
 
 #### Team Members: Brian Darmitzel, Rishabh Goyal, Xiying Huang
 #### Contact Info: briandarmitzel@gmail.com, etc
@@ -62,7 +58,6 @@ Autumn 2019
     (c) A commitment on how you will communicate weekly; and
     (d) An commitment on how you will give each other feedback on working
     together and how you will address communication challenges or work breakdowns.
->>>>>>> 823ad7161eb04b6aff3300cb21f159ad0e4a4ee7
 
 ## 6.0 Questions for Teaching Team (all of us)
     - Include questions here!

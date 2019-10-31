@@ -1,6 +1,6 @@
 # Project title
 
-## Project Code Name
+## Green Cars
 
 #### Team Members: Brian Darmitzel, Rishabh Goyal, Xiying Huang
 #### Contact Info: briandarmitzel@gmail.com, etc

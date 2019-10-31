@@ -1,6 +1,6 @@
-# Project title
+# WHICH CARS ARE GONNA SAVE THE WORLD?
 
-## Project Code Name
+## GREEN CARS
 
 #### Team Members: Brian Darmitzel, Rishabh Goyal, Xiying Huang
 #### Contact Info: briandarmitzel@gmail.com, etc

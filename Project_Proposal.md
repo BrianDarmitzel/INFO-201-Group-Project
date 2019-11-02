@@ -112,3 +112,6 @@ Autumn 2019
     [2] Shahan, Z. (2019, May 24). Visualization: 2012–2019 US Electric Car Sales
     (This Is A Must See). EcoTropical.
     Retrieved from https://ecotopical.com/cleantechnica/257184/visualization-20122019-us-electric-car-sales-must-see/
+    
+    [3] Union of Concerned Scientists (2014, July 18). Vehicles, Air Pollution, and Human Health
+    Retrieved from https://www.ucsusa.org/resources/vehicles-air-pollution-human-health

@@ -106,11 +106,11 @@ Autumn 2019
     - Include questions here!
 
 ## 7.0 References (Brian)
-    [1] Union of Concerned Scientists (2014, July 18). Vehicles, Air Pollution, and Human Health
+    [1] Union of Concerned Scientists. (2014, July 18). Vehicles, Air Pollution, and Human Health.
     Retrieved from https://www.ucsusa.org/resources/vehicles-air-pollution-human-health.
     
-    [2] National Geographic Society (2012). air pollution. [online] National Geographic Society. Available at:
-    https://www.nationalgeographic.org/encyclopedia/air-pollution/.
+    [2] National Geographic Society (2012). Air Pollution.
+    Retrieved from https://www.nationalgeographic.org/encyclopedia/air-pollution/.
     
     [3] Berman, B. (2017, June 21). 2017 Electric Car Rankings.
     Retrieved from https://www.plugincars.com/electric-cars-rack-nearly-perfect-safety-ratings-132968.html.

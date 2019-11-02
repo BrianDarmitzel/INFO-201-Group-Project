@@ -96,7 +96,9 @@ Autumn 2019
       - Brian: My goal for this project is create something that
       I can be proud of looking back on, and to increase my
       understanding of data science and informatics.
-      -
+      - Rishabh: I hope to build something creative that can have
+      an impact on society, using my technical skills. I'm looking
+      forward to learning data science tools as well.
       -
 
     (c) A commitment on how you will communicate weekly; and

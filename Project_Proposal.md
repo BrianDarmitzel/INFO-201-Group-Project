@@ -27,10 +27,11 @@ Autumn 2019
       vehicles are a major cause of air pollution. Poor air quality poses serious
       health risks and can lead to problems like asthma, bronchitis, and other lung
       diseases. Long-term health effects from air pollution include heart disease,
-      lung cancer, and respiratory diseases such as emphysema. Particulate matter
-      is singlehandedly responsible for up to 30,000 premature deaths each year.
-      Nearly 2.5 million people die worldwide each year from the effects of air
-      pollution.
+      lung cancer, and respiratory diseases such as emphysema. Nearly 2.5 million
+      people die worldwide each year from the effects of air pollution. Along with
+      harming human health, air pollution can cause a variety of environmental
+      effects such as acid rain, ozone depletion, wildfires, and global climate
+      change.
 
     1.3 Why does it matter
       Reducing pollutants in the air is important for human health and the

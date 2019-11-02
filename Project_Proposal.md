@@ -5,10 +5,10 @@
 #### Team Members: Brian Darmitzel, Rishabh Goyal, Xiying Huang
 #### Contact Info: briandarmitzel@gmail.com, rishabhgoyal555@gmail.com
 
-Info-201: Technical Foundations of Informatics
-The Information School
-University of Washington
-Autumn 2019
+Info-201: Technical Foundations of Informatics  
+The Information School  
+University of Washington  
+Autumn 2019  
 
 ## 1.0 Introduction (Rishabh)
     1.1 Problem Situation

@@ -3,7 +3,7 @@
 ## GREEN CARS
 
 #### Team Members: Brian Darmitzel, Rishabh Goyal, Xiying Huang
-#### Contact Info: briandarmitzel@gmail.com, etc
+#### Contact Info: briandarmitzel@gmail.com, rishabhgoyal555@gmail.com
 
 Info-201: Technical Foundations of Informatics
 The Information School
@@ -12,18 +12,16 @@ Autumn 2019
 
 ## 1.0 Introduction (Rishabh)
     1.1 Problem Situation
-      Describe the general problem situation – Who are the stakeholders? What is the
-      setting of the problem? What values and tensions are in play? What policy and ethic
-      elements may exist? [60-100 words]
+      Nearly 50% of Americans live in areas that don't meet federal air quality standards. Passenger vehicles are one of the major sources of air pollution, producing significant amounts of harmful pollutants such as nitrogen oxides and carbon monoxide. These pollutants contribute towards serious health related problems. Our project aims to spread awareness about how much pollutants are produced by vehicles in America by every major vehicle manufacturing company. Our stakeholders are not just Automotive Industries, but all residents of America. We hope to persuade people to buy more eco-friendly and fuel efficient vehicles.
 
     1.2 What is the problem
-      What is the problem? [60–100 words].
+      Harmful pollutants, like carbon monoxide and hydrocarbons, emitted by motor vehicles are a major cause of air pollution. Poor air quality poses serious health risks and can lead to problems like asthma, bronchitis, and other lung diseases. Long-term health effects from air pollution include heart disease, lung cancer, and respiratory diseases such as emphysema. Particulate matter is singlehandedly responsible for up to 30,000 premature deaths each year. Nearly 2.5 million people die worldwide each year from the effects of air pollution.
 
-    1.3 What does it matter
-      Why does the problem matter? [60–100 words]
+    1.3 Why does it matter
+      Reducing pollutants in the air is important for human health and the environment. As discussed earlier, motor vehicles release these harmful pollutants which lead to circulatory and respiratory issues. It is time that we take issues like climate change seriously. Reducing the number of vehicles which are not efficient and emit pollutants in large quantities can be a huge step towards fighting climate change and providing a healthy life for ourselves as well as the future generations.
 
     1.4 How will it be Addressed?
-      How will you address the problem [60–100 words]
+      Our group aims to expose which vehicle manufacturing companies are good for the environment and which ones are harmful, based on the fuel economy and the quantity of pollutants emitted by the cars manufactured by these companies. We are using large and reliable datasets for our project which will enable us to analyze and provide this information. This will help in spreading awareness and influencing people's decision while buying new cars. This in turn can also bring down the sales of car companies which do not make environmental friendly cars, forcing them to refine their manufacturing methods.
 
 ## 2.0 Research Questions (Brian)
 
@@ -70,7 +68,7 @@ Autumn 2019
       I can be proud of looking back on, and to increase my
       understanding of data science and informatics.
       -
-      - 
+      -
 
     (c) A commitment on how you will communicate weekly; and
     (d) An commitment on how you will give each other feedback on working

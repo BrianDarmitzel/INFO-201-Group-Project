@@ -33,11 +33,11 @@ Does the environmental friendliness of different cars vary much, or do they all 
 
 
 ## 3.0 Possible Data Sets
-1. [Light Duty Vehicles and Trucks Test Results](https://www.epa.gov/sites/production/files/2019-02/light-duty-vehicle-test-results-report-2014-present.xlsx)  
+* [Light Duty Vehicles and Trucks Test Results](https://www.epa.gov/sites/production/files/2019-02/light-duty-vehicle-test-results-report-2014-present.xlsx)  
     This dataset collects the basic information about cars, such as the manufacturer name, vehicle category, and the fuel type. Most importantly, it shows the CO2 standard(g/ton-mile),which informs us of how much CO2 would be emitted per mile, and thus how serious it would affect our environment. As shown in the dataset, the vehicles consuming diesel and natural gas commonly have lower CO2 standard, compared to those using gasoline and electricity. Therefore, by analyzing such dataset might help us to find out which type of vehicle is most environmentally friendly.  
 [Source and more details about this dataset](https://www.epa.gov/compliance-and-fuel-economy-data/annual-certification-data-vehicles-engines-and-equipment)
 
-2. [Vehicles Fuel Economy](https://www.fueleconomy.gov/feg/epadata/vehicles.csv.zip)  
+* [Vehicles Fuel Economy](https://www.fueleconomy.gov/feg/epadata/vehicles.csv.zip)  
     This dataset provides the vehicle information with much more details. It covers the car category: vans or compact cars, automatic or manual, rear-wheel drive or all-wheel drive. Since we aim to determine which type of vehicle result in less pollutions, the vehicle category with more variables would lead to more accurate analysis. In addition, the dataset includes green house gas scores(ghgScore), not only CO2 standard, which helps us comprehensively figure out its impact on environment.  
 [Source and more details about this dataset](https://www.fueleconomy.gov/feg/download.shtml)
 

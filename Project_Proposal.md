@@ -53,7 +53,7 @@ Does the environmental friendliness of different cars vary much, or do they all 
 
 ## 5.0 Team Coordination
 * Weekly meeting time: Thur 3.30-5.30 PM
-* Your individual goal(s) for the project and your roles:
+* Our individual goal(s) for the project and our roles:
     * Brian: My goal for this project is create something that
       I can be proud of looking back on, and to increase my
       understanding of data science and informatics.
@@ -66,9 +66,8 @@ Does the environmental friendliness of different cars vary much, or do they all 
       choose the "green car" and pay attention to our environmental issues.
       In this process, I'll cooperate with my teammates and improve
       my coding ability as possible as I can.
-* A commitment on how you will communicate weekly: We will communicate with each other through group message.
-* An commitment on how you will give each other feedback on working together and
-how you will address communication challenges or work breakdowns: We have created a github repository where everyone can make a change. For any project problems, we will discuss in group chat or weekly meeting.
+* Weekly communication: We will communicate with each other through group message.
+* Feedback on working together and addressing communication challenges or work breakdowns: We have created a github repository where everyone can make a change. For any project problems, we will discuss in group chat or weekly meeting.
 
 
 ## 6.0 References

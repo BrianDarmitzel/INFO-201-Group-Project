@@ -70,9 +70,20 @@ Autumn 2019
     attributes.
 
     - Dataset1-[Heavy-Duty Vehicle Certification Data](https://www.epa.gov/compliance-and-fuel-economy-data/annual-certification-data-vehicles-engines-and-equipment)
-    <This dataset collects the basic information about cars, such as the manufacturer name, vehicle category, and the fuel type. Most importantly, it shows the CO2 standard(g/ton-mile), which informs us of how much CO2 would be emitted per mile, and thus how serious it would affect our environment. As shown in the dataset, the vehicles consuming diesel and natural gas commonly have lower CO2 standard, compared to those using gasoline and electricity. Therefore, by analyzing such dataset might help us to find out which type of vehicle is most environmentally friendly.>
+    <This dataset collects the basic information about cars, such as the manufacturer name,
+    vehicle category, and the fuel type. Most importantly, it shows the CO2 standard(g/ton-mile),
+    which informs us of how much CO2 would be emitted per mile, and thus how serious
+    it would affect our environment. As shown in the dataset, the vehicles consuming
+    diesel and natural gas commonly have lower CO2 standard, compared to those 
+    using gasoline and electricity. Therefore, by analyzing such dataset might help
+    us to find out which type of vehicle is most environmentally friendly.>
     - Dataset2-[vehicle testing](https://www.fueleconomy.gov/feg/download.shtml)
-    <This dataset provides the vehicle information with much more details. It covers the car category: vans or compact cars, automatic or manual, rear-wheel drive or all-wheel drive. Since we aim to determine which type of vehicle result in less pollutions, the vehicle category with more variables would lead to more accurate analysis. In addition, the dataset includes green house gas scores(ghgScore), not only CO2 standard, which helps us comprehensively figure out its impact on environment>
+    <This dataset provides the vehicle information with much more details. It covers
+    the car category: vans or compact cars, automatic or manual, rear-wheel drive
+    or all-wheel drive. Since we aim to determine which type of vehicle result
+    in less pollutions, the vehicle category with more variables would lead to more
+    accurate analysis. In addition, the dataset includes green house gas scores(ghgScore),
+    not only CO2 standard, which helps us comprehensively figure out its impact on environment>
 
 ## 4.0 Information Visualizations (Brian)
 ![Electric Car Ratings](https://www.plugincars.com/sites/default/files/2017-ev-safety-ratings-620.jpg)  
@@ -101,7 +112,12 @@ Autumn 2019
       - Rishabh: I hope to build something creative that can have
       an impact on society, using my technical skills. I'm looking
       forward to learning data science tools as well.
-      - Xiying: I wish I could conclude something meaningful at the end by analyzing the data so that make a contribution in my community. For this project, I hope the data could convince more people to choose the "green car" and pay attention to our environmental issues. In this process, I'll cooperate with my teammates and improve my coding ability as possible as I can.
+      - Xiying: I wish I could conclude something meaningful at the end by
+      analyzing the data so that make a contribution in my community.
+      For this project, I hope the data could convince more people to
+      choose the "green car" and pay attention to our environmental issues.
+      In this process, I'll cooperate with my teammates and improve
+      my coding ability as possible as I can.
 
     (c) A commitment on how you will communicate weekly; and
     (d) An commitment on how you will give each other feedback on working

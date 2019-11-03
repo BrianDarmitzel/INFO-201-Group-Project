@@ -71,15 +71,15 @@ Does the environmental friendliness of different cars vary much, or do they all 
 
 
 ## 6.0 References
-    [1] Union of Concerned Scientists. (2014, July 18). Vehicles, Air Pollution, and Human Health.
-    Retrieved from https://www.ucsusa.org/resources/vehicles-air-pollution-human-health.
+[1] Union of Concerned Scientists. (2014, July 18). Vehicles, Air Pollution, and Human Health.
+Retrieved from https://www.ucsusa.org/resources/vehicles-air-pollution-human-health.
 
-    [2] National Geographic Society (2012). Air Pollution.
-    Retrieved from https://www.nationalgeographic.org/encyclopedia/air-pollution/.
+[2] National Geographic Society (2012). Air Pollution.
+Retrieved from https://www.nationalgeographic.org/encyclopedia/air-pollution/.
 
-    [3] Berman, B. (2017, June 21). 2017 Electric Car Rankings.
-    Retrieved from https://www.plugincars.com/electric-cars-rack-nearly-perfect-safety-ratings-132968.html.
+[3] Berman, B. (2017, June 21). 2017 Electric Car Rankings.
+Retrieved from https://www.plugincars.com/electric-cars-rack-nearly-perfect-safety-ratings-132968.html.
 
-    [4] Shahan, Z. (2019, May 24). Visualization: 2012–2019 US Electric Car Sales
-    (This Is A Must See). EcoTropical.
-    Retrieved from https://ecotopical.com/cleantechnica/257184/visualization-20122019-us-electric-car-sales-must-see/.
+[4] Shahan, Z. (2019, May 24). Visualization: 2012–2019 US Electric Car Sales
+(This Is A Must See). EcoTropical.
+Retrieved from https://ecotopical.com/cleantechnica/257184/visualization-20122019-us-electric-car-sales-must-see/.

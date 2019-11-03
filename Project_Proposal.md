@@ -123,7 +123,8 @@ Autumn 2019
       my coding ability as possible as I can.
 
     (c) We will communicate with each other through message.
-    (d) We create a repository in github that everyone could make a change. For any project problems, we will discuss in
+    (d) We create a repository in github that everyone could make a change.
+    For any project problems, we will discuss in
     group chat or weekly meeting.
 
 ## 6.0 Questions for Teaching Team (all of us)

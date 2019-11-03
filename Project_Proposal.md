@@ -74,7 +74,7 @@ Autumn 2019
     the vehicles consuming diesel and natural gas commonly have lower CO2 standard,
     compared to those using gasoline and electricity. Therefore, by analyzing such
     dataset might help us to find out which type of vehicle is most environmentally
-    friendly.
+    friendly.  
 [Source and more details about this dataset](https://www.epa.gov/compliance-and-fuel-economy-data/annual-certification-data-vehicles-engines-and-equipment)
 
 2. [Vehicles Fuel Economy](https://www.fueleconomy.gov/feg/epadata/vehicles.csv.zip)  
@@ -85,7 +85,7 @@ Autumn 2019
     in less pollutions, the vehicle category with more variables would lead to more
     accurate analysis. In addition, the dataset includes green house gas
     scores(ghgScore), not only CO2 standard, which helps us comprehensively figure
-    out its impact on environment.
+    out its impact on environment.  
 [Source and more details about this dataset](https://www.fueleconomy.gov/feg/download.shtml)
 
 ## 4.0 Information Visualizations (Brian)

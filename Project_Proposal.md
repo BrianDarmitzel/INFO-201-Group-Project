@@ -23,18 +23,14 @@ Reducing pollutants in the air is important for human health and the environment
 #### 1.4 How will it be Addressed?
 Our group aims to expose which vehicle manufacturing companies are good for the environment and which ones are harmful, based on the fuel economy and the quantity of pollutants emitted by the cars manufactured by these companies. We are using large and reliable datasets for our project which will enable us to analyze and provide this information. This will help in spreading awareness and influencing people's decision while buying new cars. This in turn can also bring down the sales of car companies which do not make environmental friendly cars, forcing them to refine their manufacturing methods.
 
-### 2.0 Research Questions
+## 2.0 Research Questions
 #### Research Question 1:
-    Which car manufacturer makes the greenest, most environmentally friendly
-    cars on the market? Which cars are the greenest, most environmentally
-    friendly cars on the market?
+Which car manufacturer makes the greenest, most environmentally friendly cars on the market? Which cars are the greenest, most environmentally friendly cars on the market?
     
 #### Research Question 2:
-    Does the environmental friendliness of different cars vary much, or do they
-    all basically pollute the same base amount? How much is this variance and
-    what factors does it stem from the most?
+Does the environmental friendliness of different cars vary much, or do they all basically pollute the same base amount? How much is this variance and what factors does it stem from the most?
 
-### 3.0 Possible Data Sets
+## 3.0 Possible Data Sets
 1. [Light Duty Vehicles and Trucks Test Results](https://www.epa.gov/sites/production/files/2019-02/light-duty-vehicle-test-results-report-2014-present.xlsx)  
 
     This dataset collects the basic information about cars, such as the manufacturer
@@ -58,7 +54,7 @@ Our group aims to expose which vehicle manufacturing companies are good for the 
     out its impact on environment.  
 [Source and more details about this dataset](https://www.fueleconomy.gov/feg/download.shtml)
 
-### 4.0 Information Visualizations
+## 4.0 Information Visualizations
 ![Electric Car Ratings](https://www.plugincars.com/sites/default/files/2017-ev-safety-ratings-620.jpg)  
 
     This graphic shows the ranking of different models of cars  based on safety
@@ -75,7 +71,7 @@ Our group aims to expose which vehicle manufacturing companies are good for the 
     release into the air and / or how fuel efficient these vehicles are compared
     to each other.
 
-### 5.0 Team Coordination
+## 5.0 Team Coordination
     (a) Weekly meeting time: Thur 3.30-5.30 PM
     (b) Your individual goal(s) for the project and your roles;
       - Brian: My goal for this project is create something that
@@ -95,7 +91,7 @@ Our group aims to expose which vehicle manufacturing companies are good for the 
     (d) We have created a github repository where everyone can make a change.
     For any project problems, we will discuss in group chat or weekly meeting.
 
-### 6.0 References
+## 6.0 References
     [1] Union of Concerned Scientists. (2014, July 18). Vehicles, Air Pollution, and Human Health.
     Retrieved from https://www.ucsusa.org/resources/vehicles-air-pollution-human-health.
 

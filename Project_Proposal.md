@@ -10,8 +10,8 @@ The Information School
 University of Washington  
 Autumn 2019  
 
-## 1.0 Introduction (Rishabh)
-    1.1 Problem Situation
+### 1.0 Introduction
+#### 1.1 Problem Situation
       Nearly 50% of Americans live in areas that don't meet federal air quality
       standards. Passenger vehicles are one of the major sources of air pollution,
       producing significant amounts of harmful pollutants such as nitrogen oxides
@@ -22,7 +22,7 @@ Autumn 2019
       America. We hope to persuade people to buy more eco-friendly and fuel efficient
       vehicles.
 
-    1.2 What is the problem
+#### 1.2 What is the problem
       Harmful pollutants, like carbon monoxide and hydrocarbons, emitted by motor
       vehicles are a major cause of air pollution. Poor air quality poses serious
       health risks and can lead to problems like asthma, bronchitis, and other lung
@@ -33,7 +33,7 @@ Autumn 2019
       effects such as acid rain, ozone depletion, wildfires, and global climate
       change.
 
-    1.3 Why does it matter
+#### 1.3 Why does it matter
       Reducing pollutants in the air is important for human health and the
       environment. As discussed earlier, motor vehicles release these harmful
       pollutants which lead to circulatory and respiratory issues. It is time that
@@ -42,7 +42,7 @@ Autumn 2019
       step towards fighting climate change and providing a healthy life for ourselves
       as well as the future generations.
 
-    1.4 How will it be Addressed?
+#### 1.4 How will it be Addressed?
       Our group aims to expose which vehicle manufacturing companies are good for
       the environment and which ones are harmful, based on the fuel economy and the
       quantity of pollutants emitted by the cars manufactured by these companies.
@@ -52,19 +52,18 @@ Autumn 2019
       turn can also bring down the sales of car companies which do not make
       environmental friendly cars, forcing them to refine their manufacturing methods.
 
-## 2.0 Research Questions (Brian)
-
-    - Research Question 1:
+### 2.0 Research Questions
+#### Research Question 1:
     Which car manufacturer makes the greenest, most environmentally friendly
     cars on the market? Which cars are the greenest, most environmentally
     friendly cars on the market?
-
-    - Research Question 2:
+    
+#### Research Question 2:
     Does the environmental friendliness of different cars vary much, or do they
     all basically pollute the same base amount? How much is this variance and
     what factors does it stem from the most?
 
-## 3.0 Possible Data Sets (Xiying)
+### 3.0 Possible Data Sets
 1. [Light Duty Vehicles and Trucks Test Results](https://www.epa.gov/sites/production/files/2019-02/light-duty-vehicle-test-results-report-2014-present.xlsx)  
 
     This dataset collects the basic information about cars, such as the manufacturer
@@ -88,7 +87,7 @@ Autumn 2019
     out its impact on environment.  
 [Source and more details about this dataset](https://www.fueleconomy.gov/feg/download.shtml)
 
-## 4.0 Information Visualizations (Brian)
+### 4.0 Information Visualizations
 ![Electric Car Ratings](https://www.plugincars.com/sites/default/files/2017-ev-safety-ratings-620.jpg)  
 
     This graphic shows the ranking of different models of cars  based on safety
@@ -105,8 +104,7 @@ Autumn 2019
     release into the air and / or how fuel efficient these vehicles are compared
     to each other.
 
-## 5.0 Team Coordination (all of us)
-    You should document at least the following:
+### 5.0 Team Coordination
     (a) Weekly meeting time: Thur 3.30-5.30 PM
     (b) Your individual goal(s) for the project and your roles;
       - Brian: My goal for this project is create something that
@@ -123,14 +121,10 @@ Autumn 2019
       my coding ability as possible as I can.
 
     (c) We will communicate with each other through message.
-    (d) We create a repository in github that everyone could make a change.
-    For any project problems, we will discuss in
-    group chat or weekly meeting.
+    (d) We have created a github repository where everyone can make a change.
+    For any project problems, we will discuss in group chat or weekly meeting.
 
-## 6.0 Questions for Teaching Team (all of us)
-    - Include questions here!
-
-## 7.0 References (Brian)
+### 6.0 References
     [1] Union of Concerned Scientists. (2014, July 18). Vehicles, Air Pollution, and Human Health.
     Retrieved from https://www.ucsusa.org/resources/vehicles-air-pollution-human-health.
 

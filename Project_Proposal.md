@@ -65,7 +65,8 @@ Autumn 2019
     what factors does it stem from the most?
 
 ## 3.0 Possible Data Sets (Xiying)
--[Heavy-Duty Vehicle Certification Data](https://www.epa.gov/compliance-and-fuel-economy-data/annual-certification-data-vehicles-engines-and-equipment)
+-[Light Duty Vehicles and Trucks Test Results](https://www.epa.gov/sites/production/files/2019-02/light-duty-vehicle-test-results-report-2014-present.xlsx)
+[Source and more details about this dataset](https://www.epa.gov/compliance-and-fuel-economy-data/annual-certification-data-vehicles-engines-and-equipment)
 
     This dataset collects the basic information about cars, such as the manufacturer
     name, vehicle category, and the fuel type. Most importantly, it shows the CO2
@@ -76,7 +77,8 @@ Autumn 2019
     dataset might help us to find out which type of vehicle is most environmentally
     friendly.
 
--[vehicle testing](https://www.fueleconomy.gov/feg/download.shtml)
+-[Vehicles Fuel Economy](https://www.fueleconomy.gov/feg/epadata/vehicles.csv.zip)
+[Source and more details about this dataset](https://www.fueleconomy.gov/feg/download.shtml)
 
     This dataset provides the vehicle information with much more details. It covers
     the car category: vans or compact cars, automatic or manual, rear-wheel drive

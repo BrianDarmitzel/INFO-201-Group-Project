@@ -10,7 +10,7 @@ The Information School
 University of Washington  
 Autumn 2019  
 
-### 1.0 Introduction
+## 1.0 Introduction
 #### 1.1 Problem Situation
 Nearly 50% of Americans live in areas that don't meet federal air quality standards. Passenger vehicles are one of the major sources of air pollution, producing significant amounts of harmful pollutants such as nitrogen oxides and carbon monoxide. These pollutants contribute towards serious health related problems. Our project aims to spread awareness about how much pollutants are produced by vehicles in America by every major vehicle manufacturing company. Our stakeholders are not just Automotive Industries, but all residents of America. We hope to persuade people to buy more eco-friendly and fuel efficient vehicles.
 

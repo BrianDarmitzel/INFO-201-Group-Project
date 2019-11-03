@@ -65,7 +65,7 @@ Autumn 2019
     what factors does it stem from the most?
 
 ## 3.0 Possible Data Sets (Xiying)
--[Light Duty Vehicles and Trucks Test Results](https://www.epa.gov/sites/production/files/2019-02/light-duty-vehicle-test-results-report-2014-present.xlsx)  
+1. [Light Duty Vehicles and Trucks Test Results](https://www.epa.gov/sites/production/files/2019-02/light-duty-vehicle-test-results-report-2014-present.xlsx)  
 
     This dataset collects the basic information about cars, such as the manufacturer
     name, vehicle category, and the fuel type. Most importantly, it shows the CO2
@@ -77,7 +77,7 @@ Autumn 2019
     friendly.
 [Source and more details about this dataset](https://www.epa.gov/compliance-and-fuel-economy-data/annual-certification-data-vehicles-engines-and-equipment)
 
--[Vehicles Fuel Economy](https://www.fueleconomy.gov/feg/epadata/vehicles.csv.zip)  
+2. [Vehicles Fuel Economy](https://www.fueleconomy.gov/feg/epadata/vehicles.csv.zip)  
 
     This dataset provides the vehicle information with much more details. It covers
     the car category: vans or compact cars, automatic or manual, rear-wheel drive

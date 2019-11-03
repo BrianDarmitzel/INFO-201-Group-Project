@@ -43,11 +43,13 @@ Does the environmental friendliness of different cars vary much, or do they all 
 
 
 ## 4.0 Information Visualizations
-1. ![Electric Car Ratings](https://www.plugincars.com/sites/default/files/2017-ev-safety-ratings-620.jpg)  
+1. 
+![Electric Car Ratings](https://www.plugincars.com/sites/default/files/2017-ev-safety-ratings-620.jpg)  
 
     This graphic shows the ranking of different models of cars  based on safety and comfort ratings, giving them different scores based on how the creators of this visualization determined their ranking. In our project, we plan to make a similar visualization except instead of ranking safety and comfort features it will rank environmental friendliness and fuel efficiency, as well as other variables associated with green cars.
 
-2. ![Electric Car Sales by Country](https://cleantechnica.com/files/2019/05/US-EV-Sales-4-2019.png)  
+2. 
+![Electric Car Sales by Country](https://cleantechnica.com/files/2019/05/US-EV-Sales-4-2019.png)  
 
     This graphic shows the number of electric cars sold, sorted by model of car. In our visualization we plan on ranking cars based on how many pollutants they release into the air and/or how fuel efficient these vehicles are compared to each other.
 

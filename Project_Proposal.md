@@ -107,7 +107,7 @@ Autumn 2019
 
 ## 5.0 Team Coordination (all of us)
     You should document at least the following:
-    (a) Weekly time: Thursday 3.30-4.30 PM
+    (a) Weekly meeting time: Thur 3.30-5.30 PM
     (b) Your individual goal(s) for the project and your roles;
       - Brian: My goal for this project is create something that
       I can be proud of looking back on, and to increase my
@@ -122,9 +122,9 @@ Autumn 2019
       In this process, I'll cooperate with my teammates and improve
       my coding ability as possible as I can.
 
-    (c) A commitment on how you will communicate weekly; and
-    (d) An commitment on how you will give each other feedback on working
-    together and how you will address communication challenges or work breakdowns.
+    (c) We will communicate with each other through message.
+    (d) We create a repository in github that everyone could make a change. For any project problems, we will discuss in
+    group chat or weekly meeting.
 
 ## 6.0 Questions for Teaching Team (all of us)
     - Include questions here!

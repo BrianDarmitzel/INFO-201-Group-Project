@@ -65,25 +65,26 @@ Autumn 2019
     what factors does it stem from the most?
 
 ## 3.0 Possible Data Sets (Xiying)
-    Describe two possible data sets that you might work with. Include name, short
-    description [30-60 words], link, and number of observations and number of
-    attributes.
+-[Heavy-Duty Vehicle Certification Data](https://www.epa.gov/compliance-and-fuel-economy-data/annual-certification-data-vehicles-engines-and-equipment)
 
-    - Dataset1-[Heavy-Duty Vehicle Certification Data](https://www.epa.gov/compliance-and-fuel-economy-data/annual-certification-data-vehicles-engines-and-equipment)
-    <This dataset collects the basic information about cars, such as the manufacturer name,
-    vehicle category, and the fuel type. Most importantly, it shows the CO2 standard(g/ton-mile),
-    which informs us of how much CO2 would be emitted per mile, and thus how serious
-    it would affect our environment. As shown in the dataset, the vehicles consuming
-    diesel and natural gas commonly have lower CO2 standard, compared to those 
-    using gasoline and electricity. Therefore, by analyzing such dataset might help
-    us to find out which type of vehicle is most environmentally friendly.>
-    - Dataset2-[vehicle testing](https://www.fueleconomy.gov/feg/download.shtml)
-    <This dataset provides the vehicle information with much more details. It covers
+    This dataset collects the basic information about cars, such as the manufacturer
+    name, vehicle category, and the fuel type. Most importantly, it shows the CO2
+    standard(g/ton-mile),which informs us of how much CO2 would be emitted per mile,
+    and thus how serious it would affect our environment. As shown in the dataset,
+    the vehicles consuming diesel and natural gas commonly have lower CO2 standard,
+    compared to those using gasoline and electricity. Therefore, by analyzing such
+    dataset might help us to find out which type of vehicle is most environmentally
+    friendly.
+
+-[vehicle testing](https://www.fueleconomy.gov/feg/download.shtml)
+
+    This dataset provides the vehicle information with much more details. It covers
     the car category: vans or compact cars, automatic or manual, rear-wheel drive
     or all-wheel drive. Since we aim to determine which type of vehicle result
     in less pollutions, the vehicle category with more variables would lead to more
-    accurate analysis. In addition, the dataset includes green house gas scores(ghgScore),
-    not only CO2 standard, which helps us comprehensively figure out its impact on environment>
+    accurate analysis. In addition, the dataset includes green house gas
+    scores(ghgScore), not only CO2 standard, which helps us comprehensively figure
+    out its impact on environment.
 
 ## 4.0 Information Visualizations (Brian)
 ![Electric Car Ratings](https://www.plugincars.com/sites/default/files/2017-ev-safety-ratings-620.jpg)  

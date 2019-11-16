@@ -26,6 +26,10 @@ test_cars <- test_filtered %>%
   group_by(`Carline Models Covered`) %>% 
   summarise(num = n())
 
+test_years <- test_filtered %>% 
+  group_by(`Model Year`) %>% 
+  summarise(num = n())
+
 vehicles_filtered <- vehicles_data %>% 
   select(
     -city08U, -cityA08U, -comb08U, -combA08U, -cylinders,
@@ -85,4 +89,8 @@ vehicles_filtered <- vehicles_data %>%
 
 vehicle_cars <- vehicles_filtered %>% 
   group_by(model) %>% 
+  summarise(num = n())
+
+vehicle_years <- vehicles_filtered %>% 
+  group_by(`Model year`) %>% 
   summarise(num = n())

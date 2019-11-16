@@ -34,7 +34,7 @@ vehicles_filtered <- vehicles_data %>%
     -sCharger, -tCharger, -c240Dscr, -startStop,
     -hpv, -id, -mpgData, -range, -rangeCity, -rangeCityA,
     -rangeHwy, -rangeHwyA, -rangeA, -mfrCode, -charge240b,
-    -c240bDscr
+    -c240bDscr, -UHighway, -UHighwayA
   ) %>% 
   rename(
     "Annual petroleum consumption in barrels for main fuel" = barrels08,
@@ -74,8 +74,6 @@ vehicles_filtered <- vehicles_data %>%
     "Vehicle operates on gas / electric blend on low charge" = phevBlended,
     "City MPG for main fuel" = UCity,
     "City MPG for alt fuel" = UCityA,
-    "Highway MPG for main fuel" = UHighway,
-    "Highway MPH for alt fuel" = UHighwayA,
     "EPA Vehicle size class" = VClass,
     "Model year" = year,
     "Cost savings for gas over 5 years comapred to average car" = youSaveSpend,

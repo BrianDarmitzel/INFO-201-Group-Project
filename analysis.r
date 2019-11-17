@@ -6,10 +6,10 @@ library("dplyr")
 # decide which data is relevant to our question.
 
 vehicles_data <- read.csv("data/vehicles.csv", stringsAsFactors = FALSE)
-test_results <- import("data/light-duty-vehicle-test-results-report-2014-present.xlsx")
+test_results_2014_present <- import("data/light-duty-vehicle-test-results-report-2014-present.xlsx")
 
 # filter out the columns that we do not need for our analysis
-test_filtered <- test_results %>%
+test_filtered_2014_present <- test_results_2014_present %>%
   select(
     -`Certified Test Group`, -`Certified Evaporative Family`, -`Vehicle ID`, -`Vehicle Configuration Number`,
     -`Displacement (L)`, -`Gross Vehicle Weight Rating (lbs.)`, -`Test Drive`, -`Test Drive Description`,
@@ -21,16 +21,34 @@ test_filtered <- test_results %>%
     -`Reactivity Factor (RAF)`
   )
 
+test_results_2009_2013 <- import("data/light-duty-vehicle-test-results-report-2009-2013.xlsx")
+test_filtered_2009_2013 <- test_results_2009_2013 %>%
+  select(
+    -`Certified Test Group`, -`Certified Evaporative Family`, -`Vehicle ID`, -`Vehicle Configuration Number`,
+    -`Displacement (L)`, -`Gross Vehicle Weight Rating (lbs.)`, -`Test Drive`, -`Test Drive Description`,
+    -`Transmission Type`, -`Transmission Type Description`, -`Transmission type, if other`, -`Number of Gears`,
+    -`Transmission Lockup Yes/No?`, -`Creeper Gear Yes/No?`, -`Equivalent Test Weight (lbs.)`,
+    -`Vehicle Fuel Category`, -`Vehicle Fuel Category Description`, -`Test Number`, -`Test Procedure`,
+    -`Test Fuel`, -`Certification/In-Use Code`, -`Vehicle Class`, -`Certification Region`,
+    -`Emission Standard Level Code`, -`Upward Diesel Adjustment Factor`, -`Downward Diesel Adjustment Factor`,
+    -`Reactivity Factor (RAF)`
+  )
+
+test_filtered_2009_present <- rbind(test_filtered_2009_2013, test_filtered_2014_present)
+#View(test_filtered_2009_present)
+#write.csv(test_filtered_2009_present, "data/test_filtered_2009_present.csv", row.names = FALSE)
+
 # how many cars are represented in the EPA tests.
-test_cars <- test_filtered %>% 
+test_cars <- test_filtered_2009_present %>% 
   group_by(`Carline Models Covered`) %>% 
   summarise(num = n())
 
-test_years <- test_filtered %>% 
+test_years <- test_filtered_2009_present %>% 
   group_by(`Model Year`) %>% 
   summarise(num = n())
 
 vehicles_filtered <- vehicles_data %>% 
+  filter(year >= 2009) %>% 
   select(
     -city08U, -cityA08U, -comb08U, -combA08U, -cylinders,
     -displ, -drive, -highway08U, -highwayA08U, -hlv,
@@ -94,3 +112,5 @@ vehicle_cars <- vehicles_filtered %>%
 vehicle_years <- vehicles_filtered %>% 
   group_by(`Model year`) %>% 
   summarise(num = n())
+
+

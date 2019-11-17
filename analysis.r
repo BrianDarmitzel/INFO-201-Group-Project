@@ -2,14 +2,12 @@ library("rio")
 library("xlsx")
 library("dplyr")
 
-# decide which columns we are going to remove
-# decide which data is relevant to our question.
-
-vehicles_data <- read.csv("data/vehicles.csv", stringsAsFactors = FALSE)
+vehicles_data <- read.csv("data/vehicles.csv", stringsAsFactors = F)
 test_results <- import("data/light-duty-vehicle-test-results-report-2014-present.xlsx")
+test_data <- read.csv("data/test_filtered_2009_present.csv", stringsAsFactors = F)
 
 # filter out the columns that we do not need for our analysis
-test_filtered <- test_results %>%
+test_filtered <- test_data %>%
   select(
     -`Certified Test Group`, -`Certified Evaporative Family`, -`Vehicle ID`, -`Vehicle Configuration Number`,
     -`Displacement (L)`, -`Gross Vehicle Weight Rating (lbs.)`, -`Test Drive`, -`Test Drive Description`,

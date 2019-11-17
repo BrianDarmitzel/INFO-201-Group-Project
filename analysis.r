@@ -2,12 +2,14 @@ library("rio")
 library("xlsx")
 library("dplyr")
 
-vehicles_data <- read.csv("data/vehicles.csv", stringsAsFactors = F)
-test_results <- import("data/light-duty-vehicle-test-results-report-2014-present.xlsx")
-test_data <- read.csv("data/test_filtered_2009_present.csv", stringsAsFactors = F)
+# decide which columns we are going to remove
+# decide which data is relevant to our question.
+
+vehicles_data <- read.csv("data/vehicles.csv", stringsAsFactors = FALSE)
+test_results_2014_present <- import("data/light-duty-vehicle-test-results-report-2014-present.xlsx")
 
 # filter out the columns that we do not need for our analysis
-test_filtered <- test_data %>%
+test_filtered_2014_present <- test_results_2014_present %>%
   select(
     -`Certified Test Group`, -`Certified Evaporative Family`, -`Vehicle ID`, -`Vehicle Configuration Number`,
     -`Displacement (L)`, -`Gross Vehicle Weight Rating (lbs.)`, -`Test Drive`, -`Test Drive Description`,
@@ -19,25 +21,43 @@ test_filtered <- test_data %>%
     -`Reactivity Factor (RAF)`
   )
 
+test_results_2009_2013 <- import("data/light-duty-vehicle-test-results-report-2009-2013.xlsx")
+test_filtered_2009_2013 <- test_results_2009_2013 %>%
+  select(
+    -`Certified Test Group`, -`Certified Evaporative Family`, -`Vehicle ID`, -`Vehicle Configuration Number`,
+    -`Displacement (L)`, -`Gross Vehicle Weight Rating (lbs.)`, -`Test Drive`, -`Test Drive Description`,
+    -`Transmission Type`, -`Transmission Type Description`, -`Transmission type, if other`, -`Number of Gears`,
+    -`Transmission Lockup Yes/No?`, -`Creeper Gear Yes/No?`, -`Equivalent Test Weight (lbs.)`,
+    -`Vehicle Fuel Category`, -`Vehicle Fuel Category Description`, -`Test Number`, -`Test Procedure`,
+    -`Test Fuel`, -`Certification/In-Use Code`, -`Vehicle Class`, -`Certification Region`,
+    -`Emission Standard Level Code`, -`Upward Diesel Adjustment Factor`, -`Downward Diesel Adjustment Factor`,
+    -`Reactivity Factor (RAF)`
+  )
+
+test_filtered_2009_present <- rbind(test_filtered_2009_2013, test_filtered_2014_present)
+#View(test_filtered_2009_present)
+#write.csv(test_filtered_2009_present, "data/test_filtered_2009_present.csv", row.names = FALSE)
+
 # how many cars are represented in the EPA tests.
-test_cars <- test_filtered %>% 
-  group_by(`Carline Models Covered`) %>% 
+test_cars <- test_filtered_2009_present %>%
+  group_by(`Carline Models Covered`) %>%
   summarise(num = n())
 
-test_years <- test_filtered %>% 
-  group_by(`Model Year`) %>% 
+test_years <- test_filtered_2009_present %>%
+  group_by(`Model Year`) %>%
   summarise(num = n())
 
-vehicles_filtered <- vehicles_data %>% 
+vehicles_filtered <- vehicles_data %>%
+  filter(year >= 2009) %>%
   select(
     -city08U, -cityA08U, -comb08U, -combA08U, -cylinders,
     -displ, -drive, -highway08U, -highwayA08U, -hlv,
-    -lv2, -lv4, -pv2, -pv4, -trans_dscr, -trany, 
+    -lv2, -lv4, -pv2, -pv4, -trans_dscr, -trany,
     -sCharger, -tCharger, -c240Dscr, -startStop,
     -hpv, -id, -mpgData, -range, -rangeCity, -rangeCityA,
     -rangeHwy, -rangeHwyA, -rangeA, -mfrCode, -charge240b,
     -c240bDscr, -UHighway, -UHighwayA
-  ) %>% 
+  ) %>%
   rename(
     "Annual petroleum consumption in barrels for main fuel" = barrels08,
     "Annual petroleum consumption in barrels for alternate fuel" = barrelsA08,
@@ -85,10 +105,10 @@ vehicles_filtered <- vehicles_data %>%
     "EPA composite gasoline-electricity combined city-highway MPGe for plug-in hybrid vehicles" = phevComb
   )
 
-vehicle_cars <- vehicles_filtered %>% 
-  group_by(model) %>% 
+vehicle_cars <- vehicles_filtered %>%
+  group_by(model) %>%
   summarise(num = n())
 
-vehicle_years <- vehicles_filtered %>% 
-  group_by(`Model year`) %>% 
+vehicle_years <- vehicles_filtered %>%
+  group_by(`Model year`) %>%
   summarise(num = n())

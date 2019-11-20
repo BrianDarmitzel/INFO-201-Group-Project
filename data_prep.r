@@ -1,11 +1,11 @@
 library("rio")
 library("xlsx")
 library("dplyr")
+library("readxl")
 
 # original data sets
-vehicles_data <- read.csv("data/vehicles.csv", stringsAsFactors = FALSE)
-test_results_2014_present <- import("data/light-duty-vehicle-test-results-report-2014-present.xlsx")
-
+vehicles_data <- read.csv(unz("data/original_datasets.zip", "original_datasets/vehicles.csv"))
+test_results_2014_present <- read_excel("data/original_datasets.zip")
 # filter out the columns that we do not need for our analysis
 test_filtered_2014_present <- test_results_2014_present %>%
   select(

@@ -44,5 +44,6 @@ highway_mpg_plot <- ggplot(data = highway_mpg, aes(x = reorder(highway_mpg$make,
   coord_flip() +
   theme_minimal() 
 
+
 city_mpg_plot
 highway_mpg_plot

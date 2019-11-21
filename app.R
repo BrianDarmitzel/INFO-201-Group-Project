@@ -16,18 +16,19 @@ source("test_results_analysis.R")
 
 ui <- fluidPage(
   
- titlePanel("Green car research application"),
+ titlePanel("Green Car Research Project"),
   
   tabsetPanel(
     type = "tabs", id = "nav_bar",
    
     tabPanel(
         "Introduction",
+        h3("Introduction"),
         htmlOutput("intro")
         ),
   
     tabPanel(
-    "categories",
+    "Categories",
     sidebarLayout(
       sidebarPanel(
         selectInput(
@@ -49,7 +50,7 @@ ui <- fluidPage(
            sidebarLayout(
              sidebarPanel(
                selectInput("summary_info",
-                 label = h3("Select vihecle category"),
+                 label = h3("Select Car Brand"),
                  choices = select_list,
                  selected = "VW")
              ),
@@ -60,10 +61,10 @@ ui <- fluidPage(
     ),
   
    tabPanel("About",
-           h3("Purpose"),
+           h3("Purpose of our Project"),
            tags$div(
              "the description will go here"),
-           h3("Contact"),
+           h3("Contact Information"),
            tags$div(
              "Brian Darmitzel, Rishabh Goyal, Xiying Huang",
              tags$br(),
@@ -76,10 +77,9 @@ ui <- fluidPage(
              tags$i("November 18, 2019")
            ),
            h3("Github Repository"),
-           tags$pre(tags$a(href = "https://github.com/BrianDarmitzel/INFO-201-Group-Project",
+           href = "https://github.com/BrianDarmitzel/INFO-201-Group-Project",
                            "https://github.com/BrianDarmitzel/INFO-201-Group-Project"))
   )
-))
 
        
 
@@ -92,30 +92,16 @@ server <- function(input, output) {
   
     output$plots <- renderPlot({ input$analysis })
   output$plot_city <- renderPlot({
-    city_mpg_plot <- ggplot(data = city_mpg, aes(x = reorder(city_mpg$make, city_mpg$`Average City MPG`),
-                                                                               y = city_mpg$`Average City MPG`)) +
-    geom_bar(stat = "identity", fill = "steelblue") +
-    geom_text(aes(label = round(city_mpg$`Average City MPG`, 1), hjust = -0.2)) +
-    labs(title = "Average City MPG of Different Car Manufacturers",
-         x = "Car Manufacturer", y = "Miles Per Gallon in City") +
-    coord_flip() +
-    theme_minimal()
+    city_mpg_plot <- plot_mpg(city_mpg)
     city_mpg_plot
   })
   
   output$plot_highway <- renderPlot({
-    highway_mpg_plot <- ggplot(data = highway_mpg, aes(x = reorder(highway_mpg$make, highway_mpg$`Average Highway MPG`),
-                                                       y = highway_mpg$`Average Highway MPG`)) +
-      geom_bar(stat = "identity", fill = "steelblue") +
-      geom_text(aes(label = round(highway_mpg$`Average Highway MPG`, 1), hjust = -0.2)) +
-      labs(title = "Average Highway MPG of Different Car Manufacturers",
-           x = "Car Manufacturer", y = "Miles Per Gallon on Highway") +
-      coord_flip() +
-      theme_minimal()
+    highway_mpg_plot <- plot_mpg(highway_mpg)
     highway_mpg_plot
   })
-
   
+
 }
 
 shinyApp(ui = ui, server = server)

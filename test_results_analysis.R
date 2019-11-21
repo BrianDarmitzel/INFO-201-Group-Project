@@ -2,7 +2,7 @@ library('dplyr')
 library('stringr')
 library("ggplot2")
 
-test_df <- read.csv("data/final_datasets/test_filtered_2009_present.csv", stringsAsFactors = FALSE)
+test_df <- read.csv(unz("data/filtered_datasets.zip", "filtered_datasets/test_filtered_2009_present.csv"))
 
 test_df$Represented.Test.Vehicle.Make <- str_to_upper(test_df$Represented.Test.Vehicle.Make)
 
@@ -19,7 +19,6 @@ summary_info <- filter_test_df %>%
   # filter(num > 20) %>% 
   arrange(-avg_emission)
   # head(10)
-View(summary_info)
 
 select_list <- filter_test_df %>% 
   group_by(Represented.Test.Vehicle.Make) %>% 

@@ -16,9 +16,9 @@ filter_test_df <- test_df %>%
 summary_info <- filter_test_df %>% 
   group_by(Represented.Test.Vehicle.Make) %>% 
   summarize(num = n(), total_emissions_emitted = sum(Emission_Emitted, na.rm = TRUE), avg_emission = total_emissions_emitted/num) %>% 
-  # filter(num > 20) %>% 
-  arrange(-avg_emission)
-  # head(10)
+  filter(num > 20) %>% 
+  arrange(-avg_emission)%>% 
+  head(10)
 
 select_list <- filter_test_df %>% 
   group_by(Represented.Test.Vehicle.Make) %>% 

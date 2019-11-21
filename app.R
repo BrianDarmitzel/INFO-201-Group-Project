@@ -43,7 +43,7 @@ ui <- fluidPage(
       
     mainPanel(
       plotOutput(outputId = "plot_city"),
-      plotOutput(outputId = "plot_highway")
+      #plotOutput(outputId = "plot_highway")
     ))
     ),
     
@@ -66,9 +66,6 @@ ui <- fluidPage(
     ),
   
    tabPanel("About",
-           h3("Purpose of our Project"),
-           tags$div(
-             "the description will go here"),
            h3("Contact Information"),
            tags$div(
              "Brian Darmitzel, Rishabh Goyal, Xiying Huang",

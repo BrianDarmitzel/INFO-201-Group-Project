@@ -43,7 +43,7 @@ ui <- fluidPage(
       
     mainPanel(
       plotOutput(outputId = "plot_city"),
-      #plotOutput(outputId = "plot_highway")
+      plotOutput(outputId = "plot_highway")
     ))
     ),
     

@@ -15,18 +15,16 @@ filter_test_df <- test_df %>%
 
 summary_info <- filter_test_df %>% 
   group_by(Represented.Test.Vehicle.Make) %>% 
-  summarize(num = n(), total_emissions_emitted = sum(Emission_Emitted, na.rm = TRUE), avg_emission = total_emissions_emitted/num) %>% 
-  filter(num > 20) %>% 
-  arrange(-avg_emission)%>% 
+  summarize(num = n(), total_emissions_emitted = sum(Emission_Emitted, na.rm = TRUE), avg_emission = total_emissions_emitted/num)
+
+select_list <- summary_info %>% 
+  pull(Represented.Test.Vehicle.Make)
+
+graph_df <- summary_info %>% 
+  arrange(-avg_emission) %>% 
   head(10)
 
-select_list <- filter_test_df %>% 
-  group_by(Represented.Test.Vehicle.Make) %>% 
-  summarize(num = n(), total_emissions_emitted = sum(Emission_Emitted, na.rm = TRUE), avg_emission = total_emissions_emitted/num) %>% 
-  arrange(-avg_emission) %>% 
-pull(Represented.Test.Vehicle.Make)
-
-ggplot(data = summary_info) +
+ggplot(data = graph_df) +
   geom_col(mapping = aes(x = reorder(Represented.Test.Vehicle.Make, avg_emission), y = avg_emission)) +
   coord_flip() +
   labs(
@@ -34,4 +32,3 @@ ggplot(data = summary_info) +
     x = "Car Manufacturer",
     y = "Average Carbon Monoxide Emitted (g/mi)"
   )
-

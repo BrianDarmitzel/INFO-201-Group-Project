@@ -44,13 +44,6 @@ ui <- fluidPage(
       p("- Which car manufacturers make the most
        fuel-efficient cars, and can run the furthest
        on a single gallon of gasoline?"),
-      h3("Conclusion:"),
-      p("As shown in the plots, Mosler, MV, and Hummer are the TOP3 polluting car manufacturers,
-        while Tesla would be the most environmentally friendly car brand in the list. By selecting
-        the data from search part, we found a trend that many car brands are continually updating.
-        For example, the 2004 BMW emitted 1.6 CO (g/ml) while the 2010 BMW only emitted 0.36 CO.
-        This number dramatically decrease within six years, which means that some car manufacturers
-        did pay attention to the pollution issue and aim to improve the engines with the latest technology."),
     ),
 
     # Create a tab which holds our interactive visualizations
@@ -101,6 +94,14 @@ ui <- fluidPage(
        tags$br(),
        tags$i("November 18, 2019")
      ),
+     
+     h3("Conclusion:"),
+     p("As shown in the plots, Mosler, MV, and Hummer are the TOP3 polluting car manufacturers,
+        while Tesla would be the most environmentally friendly car brand in the list. By selecting
+        the data from search part, we found a trend that many car brands are continually updating.
+        For example, the 2004 BMW emitted 1.6 CO (g/ml) while the 2010 BMW only emitted 0.36 CO.
+        This number dramatically decrease within six years, which means that some car manufacturers
+        did pay attention to the pollution issue and aim to improve the engines with the latest technology."),
 
      # Link to our github repository
      h3("Github Repository"),

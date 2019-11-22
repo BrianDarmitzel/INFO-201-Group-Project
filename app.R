@@ -66,6 +66,7 @@ ui <- fluidPage(
        )
     ),
   
+<<<<<<< HEAD
     tabPanel("About",
       h3("Contact Information"),
       tags$div(
@@ -83,6 +84,25 @@ ui <- fluidPage(
              "https://github.com/BrianDarmitzel/INFO-201-Group-Project")
     )
   )
+=======
+   tabPanel("About",
+           h3("Contact Information"),
+           tags$div(
+             "Brian Darmitzel, Rishabh Goyal, Xiying Huang, Shray Arora",
+             tags$br(),
+             "INFO-201A: Techinical Foudations for Informatics (Autumn, 2019)",
+             tags$br(),
+             "The Information School",
+             tags$br(),
+             "University of Washington",
+             tags$br(),
+             tags$i("November 18, 2019")
+           ),
+           h3("Github Repository"),
+           tags$pre(tags$a(href = "https://github.com/BrianDarmitzel/INFO-201-Group-Project",
+                           "https://github.com/BrianDarmitzel/INFO-201-Group-Project"))
+  )))
+>>>>>>> 9e1aa9c503af796ef5b38e08bddd7a0272badac2
 
 server <- function(input, output) {
   

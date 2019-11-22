@@ -58,8 +58,7 @@ ui <- fluidPage(
           selected = "city")),
 
         mainPanel(
-        plotOutput(outputId = "plot_city"),
-        plotOutput(outputId = "plot_highway"))
+          plotlyOutput(outputId = "fuel_econ_plot"))
       )
     ),
     
@@ -108,18 +107,13 @@ ui <- fluidPage(
 # Creates data for our UI
 server <- function(input, output) {
 
-  output$plots <- renderPlot({
-    input$analysis
-  })
-
-  output$plot_city <- renderPlot({
-    city_mpg_plot <- plot_mpg(city_mpg)
-    city_mpg_plot
-  })
-
-  output$plot_highway <- renderPlot({
-    highway_mpg_plot <- plot_mpg(highway_mpg)
-    highway_mpg_plot
+  output$fuel_econ_plot <- renderPlotly({
+    if (input$analysis_var == "city") {
+      fuel_econ <- plot_mpg(city)
+    } else {
+      fuel_econ <- plot_mpg(highway)
+    }
+    fuel_econ
   })
 
   output$car_info_table <- renderTable({

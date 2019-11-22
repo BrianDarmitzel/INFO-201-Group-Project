@@ -36,7 +36,7 @@ graph_df <- summary_info %>%
   arrange(-avg_emission) %>%
   head(10)
 
-ggplot(data = graph_df) +
+emissions <- ggplot(data = graph_df) +
   geom_col(mapping = aes(
     x = reorder(Represented.Test.Vehicle.Make, avg_emission),
     y = avg_emission)) + coord_flip() +

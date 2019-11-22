@@ -47,9 +47,9 @@ ui <- fluidPage(
     ),
 
     # Create a tab which holds our interactive visualizations
-    tabPanel("Categories",
+    tabPanel("Visualizations",
+      h2("Fuel Economy Visualiztion"),       
       sidebarLayout(
-
         sidebarPanel(
         selectInput(
           inputId = "analysis_var",
@@ -59,7 +59,9 @@ ui <- fluidPage(
 
         mainPanel(
           plotlyOutput(outputId = "fuel_econ_plot"))
-      )
+      ),
+      h2("Carbon Monoxide (CO) Emissions Visualization"),
+      plotOutput(outputId = "emissions_graph")
     ),
 
     # Create a tab where users can search by car
@@ -137,6 +139,11 @@ server <- function(input, output) {
   output$description <- renderText({
     message <- paste0(("Statistics on "), input$summary_info)
     message
+  })
+  
+  output$emissions_graph <- renderPlot({
+    the_graph <- emissions
+    the_graph
   })
 }
 

@@ -47,6 +47,3 @@ plot_mpg <- function(dataset, variable) {
                                       word(column[2], 2))),
            yaxis = list(title = "Car Manufacturer"))
 }
-
-plot_mpg(highway_mpg)
-plot_mpg(city_mpg)

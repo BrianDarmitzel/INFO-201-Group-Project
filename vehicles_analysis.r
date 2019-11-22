@@ -29,7 +29,7 @@ highway_mpg <- model_mpg %>%
   select(make, `Average highway MPG`) %>%
   top_n(10)
 
-# Create a function to create interactive 
+# Create a function to create interactive
 # graph of City MPG and Highway MPG
 plot_mpg <- function(dataset, variable) {
   column <- colnames(dataset)

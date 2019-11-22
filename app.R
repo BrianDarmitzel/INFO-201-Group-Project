@@ -116,9 +116,9 @@ server <- function(input, output) {
 
   output$fuel_econ_plot <- renderPlotly({
     if (input$analysis_var == "city") {
-      fuel_econ <- plot_mpg(city)
+      fuel_econ <- plot_mpg(city_mpg)
     } else {
-      fuel_econ <- plot_mpg(highway)
+      fuel_econ <- plot_mpg(highway_mpg)
     }
     fuel_econ
   })

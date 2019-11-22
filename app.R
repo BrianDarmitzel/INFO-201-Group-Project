@@ -68,7 +68,7 @@ ui <- fluidPage(
    tabPanel("About",
            h3("Contact Information"),
            tags$div(
-             "Brian Darmitzel, Rishabh Goyal, Xiying Huang, Shray Arora",
+             "Brian Darmitzel, Rishabh Goyal, Xiying Huang",
              tags$br(),
              "INFO-201A: Techinical Foudations for Informatics (Autumn, 2019)",
              tags$br(),
@@ -79,9 +79,9 @@ ui <- fluidPage(
              tags$i("November 18, 2019")
            ),
            h3("Github Repository"),
-           tags$pre(tags$a(href = "https://github.com/BrianDarmitzel/INFO-201-Group-Project",
+           href = "https://github.com/BrianDarmitzel/INFO-201-Group-Project",
                            "https://github.com/BrianDarmitzel/INFO-201-Group-Project"))
-  )))
+  )
 
        
 
@@ -99,9 +99,9 @@ server <- function(input, output) {
   })
   
   output$car_info_table <- renderTable({
-    filtered_table <- summary_info %>% 
+    filtered_table <- summary_info %>%
       filter(Represented.Test.Vehicle.Make == input$summary_info)
-    
+
     table <- data.frame(
       Variable = c("Average Emission Emitted (g/mi)"),
       Value = c(filtered_table$avg_emission)

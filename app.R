@@ -68,7 +68,7 @@ ui <- fluidPage(
    tabPanel("About",
            h3("Contact Information"),
            tags$div(
-             "Brian Darmitzel, Rishabh Goyal, Xiying Huang",
+             "Brian Darmitzel, Rishabh Goyal, Xiying Huang, Shray Arora",
              tags$br(),
              "INFO-201A: Techinical Foudations for Informatics (Autumn, 2019)",
              tags$br(),
@@ -79,9 +79,9 @@ ui <- fluidPage(
              tags$i("November 18, 2019")
            ),
            h3("Github Repository"),
-           href = "https://github.com/BrianDarmitzel/INFO-201-Group-Project",
+           tags$pre(tags$a(href = "https://github.com/BrianDarmitzel/INFO-201-Group-Project",
                            "https://github.com/BrianDarmitzel/INFO-201-Group-Project"))
-  )
+  )))
 
        
 

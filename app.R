@@ -27,12 +27,13 @@ ui <- fluidPage(
         in the atmosphere is important for both human health and for the environment as a
         whole. By showing which cars are the most eco-friendly and fuel efficient, we hope
         to influence people's decision into which cars do the least harm to the environment,
-        and which car manufacturers create the most 'eco-frinedly' vehicles.")),
+        and which car manufacturers create the most 'eco-frinedly' vehicles."),
       h3("Research Questions:"),
       p("- Which car manufacturer makes the most 'eco-friendly' cars, as in which
         of these manufacturere does the least harm to the environment through their cars?"),
       p("- Which car manufacturers make the most fuel-efficient cars, and can run the
-        furthest on a single gallon of gasoline?"),
+        furthest on a single gallon of gasoline?")
+    ),
   
     tabPanel("Categories",
       sidebarLayout(
@@ -65,44 +66,27 @@ ui <- fluidPage(
          p("*we're going to add more information in this table."))
        )
     ),
-  
-<<<<<<< HEAD
-    tabPanel("About",
-      h3("Contact Information"),
-      tags$div(
-        "Brian Darmitzel, Rishabh Goyal, Xiying Huang",
-        tags$br(),
-        "INFO-201A: Techinical Foudations for Informatics (Autumn, 2019)",
-        tags$br(),
-        "The Information School",
-        tags$br(),
-        "University of Washington",
-        tags$br(),
-        tags$i("November 18, 2019")),
-      h3("Github Repository"),
-      href = "https://github.com/BrianDarmitzel/INFO-201-Group-Project",
-             "https://github.com/BrianDarmitzel/INFO-201-Group-Project")
-    )
-  )
-=======
+
    tabPanel("About",
-           h3("Contact Information"),
-           tags$div(
-             "Brian Darmitzel, Rishabh Goyal, Xiying Huang, Shray Arora",
-             tags$br(),
-             "INFO-201A: Techinical Foudations for Informatics (Autumn, 2019)",
-             tags$br(),
-             "The Information School",
-             tags$br(),
-             "University of Washington",
-             tags$br(),
-             tags$i("November 18, 2019")
-           ),
-           h3("Github Repository"),
-           tags$pre(tags$a(href = "https://github.com/BrianDarmitzel/INFO-201-Group-Project",
-                           "https://github.com/BrianDarmitzel/INFO-201-Group-Project"))
-  )))
->>>>>>> 9e1aa9c503af796ef5b38e08bddd7a0272badac2
+     h3("Contact Information"),
+     tags$div(
+       "Brian Darmitzel, Rishabh Goyal, Xiying Huang, Shray Arora",
+       tags$br(),
+       "INFO-201A: Techinical Foudations for Informatics (Autumn, 2019)",
+       tags$br(),
+       "The Information School",
+       tags$br(),
+       "University of Washington",
+       tags$br(),
+       tags$i("November 18, 2019")
+     ),
+     h3("Github Repository"),
+     tags$pre(tags$a(
+       href = "https://github.com/BrianDarmitzel/INFO-201-Group-Project",
+              "https://github.com/BrianDarmitzel/INFO-201-Group-Project"))
+     )
+   )
+  )
 
 server <- function(input, output) {
   

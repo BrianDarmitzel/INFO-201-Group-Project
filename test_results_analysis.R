@@ -1,32 +1,45 @@
-library('dplyr')
-library('stringr')
+library("dplyr")
+library("stringr")
 library("ggplot2")
+library("lintr")
 
-test_df <- read.csv(unz("data/filtered_datasets.zip", "filtered_datasets/test_filtered_2009_present.csv"))
+# load in filtered data set
+test_df <- read.csv(unz("data/filtered_datasets.zip",
+                        "filtered_datasets/test_filtered_2009_present.csv"))
 
-test_df$Represented.Test.Vehicle.Make <- str_to_upper(test_df$Represented.Test.Vehicle.Make)
+test_df$Represented.Test.Vehicle.Make <- str_to_upper(
+  test_df$Represented.Test.Vehicle.Make)
 
-filter_test_df <- test_df %>% 
-  select(Model.Year, Represented.Test.Vehicle.Make, Represented.Test.Vehicle.Model, Emission.Name, Rounded.Emission.Result..g.mi., ) %>% 
-  filter(Emission.Name == "CO") %>% 
-  group_by(Model.Year, Represented.Test.Vehicle.Make, Represented.Test.Vehicle.Model) %>% 
-  summarize(Emission_Emitted = max(Rounded.Emission.Result..g.mi., na.rm = TRUE))
+filter_test_df <- test_df %>%
+  select(Model.Year,
+         Represented.Test.Vehicle.Make,
+         Represented.Test.Vehicle.Model,
+         Emission.Name,
+         Rounded.Emission.Result..g.mi., ) %>%
+  filter(Emission.Name == "CO") %>%
+  group_by(Model.Year,
+           Represented.Test.Vehicle.Make,
+           Represented.Test.Vehicle.Model) %>%
+  summarize(Emission_Emitted = max(
+    Rounded.Emission.Result..g.mi., na.rm = TRUE))
 
+summary_info <- filter_test_df %>%
+  group_by(Represented.Test.Vehicle.Make) %>%
+  summarize(num = n(),
+            total_emissions_emitted = sum(Emission_Emitted, na.rm = TRUE),
+            avg_emission = total_emissions_emitted / num)
 
-summary_info <- filter_test_df %>% 
-  group_by(Represented.Test.Vehicle.Make) %>% 
-  summarize(num = n(), total_emissions_emitted = sum(Emission_Emitted, na.rm = TRUE), avg_emission = total_emissions_emitted/num)
-
-select_list <- summary_info %>% 
+select_list <- summary_info %>%
   pull(Represented.Test.Vehicle.Make)
 
-graph_df <- summary_info %>% 
-  arrange(-avg_emission) %>% 
+graph_df <- summary_info %>%
+  arrange(-avg_emission) %>%
   head(10)
 
 ggplot(data = graph_df) +
-  geom_col(mapping = aes(x = reorder(Represented.Test.Vehicle.Make, avg_emission), y = avg_emission)) +
-  coord_flip() +
+  geom_col(mapping = aes(
+    x = reorder(Represented.Test.Vehicle.Make, avg_emission),
+    y = avg_emission)) + coord_flip() +
   labs(
     title = "Top 10 Polluting Car Manufacturers",
     x = "Car Manufacturer",

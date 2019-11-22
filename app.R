@@ -11,15 +11,21 @@ library(shiny)
 library(htmltools)
 library(ggplot2)
 
+# load in source files to use in creating graphs
 source("vehicles_analysis.r")
 source("test_results_analysis.R")
 
+# create UI
 ui <- fluidPage(
+  
+  # Title of our project
   titlePanel("Green Car Research Project"),
-
+  
+  # Create tabs to navigate different sections of our project
   tabsetPanel(
     type = "tabs", id = "nav_bar",
-
+    
+    # Introduction to our project and our research questions
     tabPanel("Introduction",
       h3("Introduction:"),
       p("Our project aims to spread awareness of the rising air
@@ -39,7 +45,8 @@ ui <- fluidPage(
        fuel-efficient cars, and can run the furthest
        on a single gallon of gasoline?")
     ),
-
+    
+    # Create a tab which holds our interactive visualizations
     tabPanel("Categories",
       sidebarLayout(
 
@@ -55,7 +62,9 @@ ui <- fluidPage(
         plotOutput(outputId = "plot_highway"))
       )
     ),
-
+    
+    # Create a tab where users can search by car
+    # manufacturer and see their average emissions
     tabPanel("Search",
        sidebarLayout(
 
@@ -69,9 +78,10 @@ ui <- fluidPage(
          h3(textOutput(outputId = "description")),
          tableOutput(outputId = "car_info_table"),
          p("*we're going to add more information in this table."))
-       )
+      )
     ),
-
+    
+   # Create a tab explaining our team / resources
    tabPanel("About",
      h3("Contact Information"),
      tags$div(
@@ -85,14 +95,17 @@ ui <- fluidPage(
        tags$br(),
        tags$i("November 18, 2019")
      ),
+     
+     # Link to our github repository
      h3("Github Repository"),
      tags$pre(tags$a(
        href = "https://github.com/BrianDarmitzel/INFO-201-Group-Project",
               "https://github.com/BrianDarmitzel/INFO-201-Group-Project"))
-     )
-   )
+    )
   )
+)
 
+# Creates data for our UI
 server <- function(input, output) {
 
   output$plots <- renderPlot({
@@ -125,4 +138,5 @@ server <- function(input, output) {
   })
 }
 
+# Launch the app
 shinyApp(ui = ui, server = server)

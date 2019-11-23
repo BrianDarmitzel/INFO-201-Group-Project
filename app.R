@@ -28,14 +28,17 @@ ui <- fluidPage(
     # Introduction to our project and our research questions
     tabPanel("Introduction",
       h3("Introduction:"),
-      p("Our project aims to spread awareness of the rising air
-      pollution and environmental problems stemming from harmful
-      pollutants produced by cars. Reducing pollution in the atmosphere
-      is important for both human health and for the environment as a whole.
-      By showing which cars are the most eco-friendly and fuel efficient,
-      we hope to influence people's decision into which cars do the least
-      harm to the environment, and which car manufacturers create the most
-      'eco-frinedly' vehicles."),
+      p("Nearly 50% of Americans live in areas that don't meet federal air
+        quality standards. Passenger vehicles are one of the major sources
+        of air pollution, producing significant amounts of harmful pollutants
+        such as nitrogen oxides and carbon monoxide. These pollutants
+        contribute towards serious health related problems."),
+      p("Our project aims to spread awareness about how much pollutants are
+        produced by vehicles in America by every major vehicle manufacturing
+        company. We are using large and reliable datasets for our project
+        which will enable us to analyze and provide this information. We hope
+        to persuade people to buy more eco-friendly and fuel efficient
+        vehicles."),
       h3("Research Questions:"),
       p("- Which car manufacturer makes the most
        'eco-friendly' cars, as in which of these
@@ -48,7 +51,7 @@ ui <- fluidPage(
 
     # Create a tab which holds our interactive visualizations
     tabPanel("Visualizations",
-      h2("Fuel Economy Visualiztion"),       
+      h2("Fuel Economy Visualiztion"),
       sidebarLayout(
         sidebarPanel(
         selectInput(
@@ -82,34 +85,50 @@ ui <- fluidPage(
       )
     ),
 
+    # Create a tab where our conclusion can be seen
+    tabPanel("Conclusion",
+        h3("Conclusion"),
+        p("As seen in the CO emissions plot, Mosler, MV, and Hummer are the
+          top 3 polluting car manufacturers, while Tesla would be the most
+          environmentally friendly car brand in the list. By selecting the
+          data from search part, we found a trend that many car brands are
+          continually updating. For example, the 2004 BMW emitted 1.6 CO (g/ml)
+          while the 2010 BMW only emitted 0.36 CO. This number dramatically
+          decrease within six years, which means that some car manufacturers
+          did pay attention to the pollution issue and aim to improve the
+          engines with the latest technology. For the fuel economy plot,
+          Tesla, CODA Automative, and BYD are the top brands who make the
+          most fuel efficient cars."),
+        p("It is noticed that car brands such as Tesla, CODA Automotive, and
+          BYD, are the car manufacturers which make the most eco-friendly and
+          fuel efficient cars. We think this is because these car brands
+          mostly produce electric and hybrid cars which require some or no
+          fuel. Technological advancement has now made it possible to produce
+          more eco friendly cars which consume very less fuel, and more and
+          more car manufactureers are moving towards manufacturing such
+          cars.")
+    ),
+
    # Create a tab explaining our team / resources
    tabPanel("About",
-     h3("Contact Information"),
-     tags$div(
-       "Brian Darmitzel, Rishabh Goyal, Xiying Huang, Shray Arora",
-       tags$br(),
-       "INFO-201A: Techinical Foudations for Informatics (Autumn, 2019)",
-       tags$br(),
-       "The Information School",
-       tags$br(),
-       "University of Washington",
-       tags$br(),
-       tags$i("November 18, 2019")
-     ),
-     
-     h3("Conclusion:"),
-     p("As shown in the plots, Mosler, MV, and Hummer are the TOP 3 polluting car manufacturers,
-        while Tesla would be the most environmentally friendly car brand in the list. By selecting
-        the data from search part, we found a trend that many car brands are continually updating.
-        For example, the 2004 BMW emitted 1.6 CO (g/ml) while the 2010 BMW only emitted 0.36 CO.
-        This number dramatically decrease within six years, which means that some car manufacturers
-        did pay attention to the pollution issue and aim to improve the engines with the latest technology."),
-
-     # Link to our github repository
+     h3("About Us"),
+     "Team #6",
+     br(),
+     "Brian Darmitzel, Rishabh Goyal, Xiying Huang, Shray Arora",
+     br(),
+     "INFO-201A: Techinical Foudations for Informatics",
+     br(),
+     "The Information School",
+     br(),
+     "University of Washington",
+     br(),
+     "Autumn 2019",
+     h3("Link to the Technical Report"),
+     a("https://github.com/BrianDarmitzel/INFO-201-Group-Project/wiki/INFO-201-GROUP-PROJECT-TECHNICAL-REPORT",
+     href = "https://github.com/BrianDarmitzel/INFO-201-Group-Project/wiki/INFO-201-GROUP-PROJECT-TECHNICAL-REPORT"),
      h3("Github Repository"),
-     tags$pre(tags$a(
-       href = "https://github.com/BrianDarmitzel/INFO-201-Group-Project",
-              "https://github.com/BrianDarmitzel/INFO-201-Group-Project"))
+     a("https://github.com/BrianDarmitzel/INFO-201-Group-Project",
+       href = "https://github.com/BrianDarmitzel/INFO-201-Group-Project")
     )
   )
 )
@@ -140,7 +159,7 @@ server <- function(input, output) {
     message <- paste0(("Statistics on "), input$summary_info)
     message
   })
-  
+
   output$emissions_graph <- renderPlot({
     the_graph <- emissions
     the_graph

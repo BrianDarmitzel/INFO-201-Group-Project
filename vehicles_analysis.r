@@ -11,23 +11,34 @@ vehicles_data <- read.csv(
 
 # Group data by car manufacturer and calculate average
 # MPG for their cars on highway and city
-model_mpg <- vehicles_data %>%
+fuel_mpg_data <- vehicles_data %>%
   group_by(make) %>%
   summarise(`Number of Models in Data` = n(),
             `Average city MPG` = sum(City.MGP.for.main.fuel) / n(),
-            `Average highway MPG` = sum(Highway.MPG.for.main.fuel) / n())
-
+            `Average highway MPG` = sum(Highway.MPG.for.main.fuel) / n(),
+            `Combined MPG` = sum(Combined.MPG.for.main.fuel) / n(),
+            `Annual gas Consumption in Barrels` = sum(Annual.petroleum.consumption.in.barrels.for.main.fuel) / n(),
+            `Tailpipe Emissions in g/mi` = sum(Tailpipe.CO2.in.grams.mile.for.main.fuel..2.) / n(),
+            `Annual Fuel Cost` = sum(Annual.fuel.cost.for.main.fuel) / n(),
+            `Cost Savings for Gas over 5 Years` = sum(Cost.savings.for.gas.over.5.years.comapred.to.average.car) / n())
+  
 # single data frame with only city MPG
 city_mpg <- model_mpg %>%
   arrange(desc(`Average city MPG`)) %>%
   select(make, `Average city MPG`) %>%
-  top_n(10)
+  top_n(20)
 
 # Single data frame with only highway MPG
 highway_mpg <- model_mpg %>%
   arrange(desc(`Average highway MPG`)) %>%
   select(make, `Average highway MPG`) %>%
-  top_n(10)
+  top_n(20)
+
+# Single data frame with combined MPG
+combined_mpg <- model_mpg %>%
+  arrange(desc(`Combined MPG`)) %>%
+  select(make, `Combined MPG`) %>%
+  top_n(20)
 
 # Create a function to create interactive
 # graph of City MPG and Highway MPG
@@ -46,4 +57,6 @@ plot_mpg <- function(dataset, variable) {
                                       word(column[2], 2))),
            yaxis = list(title = "Car Manufacturer"))
 }
+
 plot_mpg(city_mpg)
+plot_mpg(highway_mpg)

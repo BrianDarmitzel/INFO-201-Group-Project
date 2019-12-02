@@ -11,18 +11,12 @@ vehicles_data <- read.csv(
 
 # Group data by car manufacturer and calculate average
 # MPG for their cars on highway and city
-fuel_mpg_data <- vehicles_data %>%
+model_mpg <- vehicles_data %>%
   group_by(make) %>%
   summarise(`Number of Models in Data` = n(),
             `Average city MPG` = sum(City.MGP.for.main.fuel) / n(),
             `Average highway MPG` = sum(Highway.MPG.for.main.fuel) / n(),
-            `Combined MPG` = sum(Combined.MPG.for.main.fuel) / n(),
-            `Annual gas Consumption in Barrels` = sum(Annual.petroleum.consumption.in.barrels.for.main.fuel) / n(),
-            `Tailpipe Emissions in g/mi` = sum(Tailpipe.CO2.in.grams.mile.for.main.fuel..2.) / n(),
-            `Annual Fuel Cost` = sum(Annual.fuel.cost.for.main.fuel) / n(),
-            `Cost Savings for Gas over 5 Years` = sum(Cost.savings.for.gas.over.5.years.comapred.to.average.car) / n())
-
-write.csv(fuel_mpg_data, "fuel_mpg_data.csv")
+            `Combined MPG` = sum(Combined.MPG.for.main.fuel) / n())
 
 # single data frame with only city MPG
 city_mpg <- model_mpg %>%
@@ -74,5 +68,30 @@ indiv_mod <- vehicles_data %>%
             `Annual Fuel Cost` = sum(Annual.fuel.cost.for.main.fuel) / n(),
             `Cost Savings for Gas over 5 Years` = sum(Cost.savings.for.gas.over.5.years.comapred.to.average.car) / n())
 
+average <- function(feature) {
+  mean(indiv_mod[[feature]])
+}
+
 # Average number of test for all cars
-mean(indiv_mod$Number)
+average("Number of Models in Data")
+
+# Average City MPG for all Cars
+average("Average city MPG")
+
+# Average Highway MPG for all Cars
+average("Average highway MPG")
+
+# Average Combined MPG for all Cars
+average("Combined MPG")
+
+# Average Gas Consumption of all Cars
+average("Annual gas Consumption in Barrels")
+
+# Average Tailpipe Emissions in grams/mile for all Cars
+average("Tailpipe Emissions in g/mi")
+
+# Average annual Fuel Cost for all Cars in USD
+average("Annual Fuel Cost")
+
+# Average Cost Savings for Gas over 5 Years
+average("Cost Savings for Gas over 5 Years")

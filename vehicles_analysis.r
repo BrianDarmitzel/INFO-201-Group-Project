@@ -11,22 +11,16 @@ vehicles_data <- read.csv(
 
 # Group data by car manufacturer and calculate average
 # MPG for their cars on highway and city
-model_mpg <- vehicles_data %>%
+fuel_mpg_data <- vehicles_data %>%
   group_by(make) %>%
   summarise(`Number of Models in Data` = n(),
             `Average city MPG` = sum(City.MGP.for.main.fuel) / n(),
             `Average highway MPG` = sum(Highway.MPG.for.main.fuel) / n(),
-<<<<<<< HEAD
-            `Combined MPG` = sum(Combined.MPG.for.main.fuel) / n())
-=======
             `Combined MPG` = sum(Combined.MPG.for.main.fuel) / n(),
             `Annual gas Consumption in Barrels` = sum(Annual.petroleum.consumption.in.barrels.for.main.fuel) / n(),
             `Tailpipe Emissions in g/mi` = sum(Tailpipe.CO2.in.grams.mile.for.main.fuel..2.) / n(),
             `Annual Fuel Cost` = sum(Annual.fuel.cost.for.main.fuel) / n(),
             `Cost Savings for Gas over 5 Years` = sum(Cost.savings.for.gas.over.5.years.comapred.to.average.car) / n())
-
-#write.csv(fuel_mpg_data, "fuel_mpg_data.csv")
->>>>>>> 4f854516a1305adbffe4cc0917da1be413a719d0
 
 # single data frame with only city MPG
 city_mpg <- fuel_mpg_data %>%
@@ -78,7 +72,6 @@ indiv_mod <- vehicles_data %>%
             `Annual Fuel Cost` = sum(Annual.fuel.cost.for.main.fuel) / n(),
             `Cost Savings for Gas over 5 Years` = sum(Cost.savings.for.gas.over.5.years.comapred.to.average.car) / n())
 
-<<<<<<< HEAD
 average <- function(feature) {
   mean(indiv_mod[[feature]])
 }
@@ -106,7 +99,3 @@ average("Annual Fuel Cost")
 
 # Average Cost Savings for Gas over 5 Years
 average("Cost Savings for Gas over 5 Years")
-=======
-#write.csv(indiv_mod, "data/filtered_datasets/vehicles_individual_data.csv",
-#          row.names = FALSE)
->>>>>>> 4f854516a1305adbffe4cc0917da1be413a719d0

@@ -21,7 +21,9 @@ fuel_mpg_data <- vehicles_data %>%
             `Tailpipe Emissions in g/mi` = sum(Tailpipe.CO2.in.grams.mile.for.main.fuel..2.) / n(),
             `Annual Fuel Cost` = sum(Annual.fuel.cost.for.main.fuel) / n(),
             `Cost Savings for Gas over 5 Years` = sum(Cost.savings.for.gas.over.5.years.comapred.to.average.car) / n())
-  
+
+write.csv(fuel_mpg_data, "fuel_mpg_data.csv")
+
 # single data frame with only city MPG
 city_mpg <- model_mpg %>%
   arrange(desc(`Average city MPG`)) %>%
@@ -60,3 +62,17 @@ plot_mpg <- function(dataset, variable) {
 
 plot_mpg(city_mpg)
 plot_mpg(highway_mpg)
+
+indiv_mod <- vehicles_data %>% 
+  group_by(make,model) %>% 
+  summarise(`Number of Models in Data` = n(),
+            `Average city MPG` = sum(City.MGP.for.main.fuel) / n(),
+            `Average highway MPG` = sum(Highway.MPG.for.main.fuel) / n(),
+            `Combined MPG` = sum(Combined.MPG.for.main.fuel) / n(),
+            `Annual gas Consumption in Barrels` = sum(Annual.petroleum.consumption.in.barrels.for.main.fuel) / n(),
+            `Tailpipe Emissions in g/mi` = sum(Tailpipe.CO2.in.grams.mile.for.main.fuel..2.) / n(),
+            `Annual Fuel Cost` = sum(Annual.fuel.cost.for.main.fuel) / n(),
+            `Cost Savings for Gas over 5 Years` = sum(Cost.savings.for.gas.over.5.years.comapred.to.average.car) / n())
+
+# Average number of test for all cars
+mean(indiv_mod$Number)

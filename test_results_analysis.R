@@ -14,14 +14,12 @@ test_df$Represented.Test.Vehicle.Make <- str_to_upper(
 
 # filter the dataset further
 filter_test_df <- test_df %>%
-  select(Model.Year,
-         Represented.Test.Vehicle.Make,
+  select(Represented.Test.Vehicle.Make,
          Represented.Test.Vehicle.Model,
          Emission.Name,
          Rounded.Emission.Result..g.mi., ) %>%
   filter(Emission.Name == "CO") %>%
-  group_by(Model.Year,
-           Represented.Test.Vehicle.Make,
+  group_by(Represented.Test.Vehicle.Make,
            Represented.Test.Vehicle.Model) %>%
   summarize(Emission_Emitted = max(
     Rounded.Emission.Result..g.mi., na.rm = TRUE))
@@ -32,10 +30,6 @@ summary_info <- filter_test_df %>%
   summarize(num = n(),
             total_emissions_emitted = sum(Emission_Emitted, na.rm = TRUE),
             avg_emission = total_emissions_emitted / num)
-
-# get the list of all car manufacturers
-select_list <- summary_info %>%
-  pull(Represented.Test.Vehicle.Make)
 
 # create a dataframe for the graph
 graph_df <- summary_info %>%
@@ -52,3 +46,6 @@ emissions <- ggplot(data = graph_df) +
     x = "Car Manufacturer",
     y = "Average Carbon Monoxide Emitted (g/mi)"
   )
+
+#write.csv(filter_test_df, "data/filtered_datasets/emissions_data.csv",
+#          row.names = FALSE)

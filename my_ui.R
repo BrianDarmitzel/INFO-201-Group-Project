@@ -38,7 +38,7 @@ my_ui <- fluidPage(
              sidebarLayout(
                sidebarPanel(
                  selectInput(
-                   inputId = "analysis_var",
+                   inputId = "viz_type",
                    label = h3("Types of MPG"),
                    choices = c("city", "highway"),
                    selected = "city")),
@@ -56,15 +56,22 @@ my_ui <- fluidPage(
              sidebarLayout(
                
                sidebarPanel(
-                 selectInput("summary_info",
+                 selectInput("car_brand",
                              label = h3("Select Car Brand"),
-                             choices = select_list)),
+                             choices = all_brands$`Vehicle Manufacturer`),
+                 selectInput("car_model",
+                             label = h3("Select Car Model of the Selected Brand"),
+                             choices = "")
+                 ),
                
                mainPanel(
-                 h3(textOutput(outputId = "description")),
-                 tableOutput(outputId = "car_info_table"),
-                 p("*we're going to add more information in this table."))
+                 h3(textOutput(outputId = "description_brand")),
+                 tableOutput(outputId = "brand_info_table"),
+                 br(),
+                 h3(textOutput(outputId = "description_model")),
+                 tableOutput(outputId = "car_info_table")
              )
+           )
     ),
     
     # Create a tab where our conclusion can be seen

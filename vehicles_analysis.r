@@ -25,19 +25,19 @@ fuel_mpg_data <- vehicles_data %>%
 #write.csv(fuel_mpg_data, "fuel_mpg_data.csv")
 
 # single data frame with only city MPG
-city_mpg <- model_mpg %>%
+city_mpg <- fuel_mpg_data %>%
   arrange(desc(`Average city MPG`)) %>%
   select(make, `Average city MPG`) %>%
   top_n(20)
 
 # Single data frame with only highway MPG
-highway_mpg <- model_mpg %>%
+highway_mpg <- fuel_mpg_data %>%
   arrange(desc(`Average highway MPG`)) %>%
   select(make, `Average highway MPG`) %>%
   top_n(20)
 
 # Single data frame with combined MPG
-combined_mpg <- model_mpg %>%
+combined_mpg <- fuel_mpg_data %>%
   arrange(desc(`Combined MPG`)) %>%
   select(make, `Combined MPG`) %>%
   top_n(20)

@@ -22,7 +22,7 @@ fuel_mpg_data <- vehicles_data %>%
             `Annual Fuel Cost` = sum(Annual.fuel.cost.for.main.fuel) / n(),
             `Cost Savings for Gas over 5 Years` = sum(Cost.savings.for.gas.over.5.years.comapred.to.average.car) / n())
 
-write.csv(fuel_mpg_data, "fuel_mpg_data.csv")
+#write.csv(fuel_mpg_data, "fuel_mpg_data.csv")
 
 # single data frame with only city MPG
 city_mpg <- model_mpg %>%
@@ -60,8 +60,8 @@ plot_mpg <- function(dataset, variable) {
            yaxis = list(title = "Car Manufacturer"))
 }
 
-plot_mpg(city_mpg)
-plot_mpg(highway_mpg)
+#plot_mpg(city_mpg)
+#plot_mpg(highway_mpg)
 
 indiv_mod <- vehicles_data %>% 
   group_by(make,model) %>% 
@@ -74,5 +74,5 @@ indiv_mod <- vehicles_data %>%
             `Annual Fuel Cost` = sum(Annual.fuel.cost.for.main.fuel) / n(),
             `Cost Savings for Gas over 5 Years` = sum(Cost.savings.for.gas.over.5.years.comapred.to.average.car) / n())
 
-# Average number of test for all cars
-mean(indiv_mod$Number)
+#write.csv(indiv_mod, "data/filtered_datasets/vehicles_individual_data.csv",
+#          row.names = FALSE)

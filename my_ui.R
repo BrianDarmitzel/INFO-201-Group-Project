@@ -60,7 +60,7 @@ my_ui <- fluidPage(
                sidebarPanel(
                  selectInput("car_brand",
                              label = h3("Select Car Brand"),
-                             choices = all_brands$`Vehicle Manufacturer`),
+                             choices = all_cars$`Vehicle Manufacturer`),
                  selectInput("car_model",
                              label = h3("Select Car Model of the Selected Brand"),
                              choices = "")
@@ -96,7 +96,7 @@ my_ui <- fluidPage(
           mostly produce electric and hybrid cars which require some or no
           fuel. Technological advancement has now made it possible to produce
           more eco friendly cars which consume very less fuel, and more and
-          more car manufactureers are moving towards manufacturing such
+          more car manufacturers are moving towards manufacturing such
           cars.")
     ),
     

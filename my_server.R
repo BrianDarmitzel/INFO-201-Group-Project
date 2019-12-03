@@ -1,5 +1,6 @@
 library(ggplot2)
 library(dplyr)
+library(plotly)
 
 # load in source files to use in creating graphs
 source("vehicles_analysis.r")

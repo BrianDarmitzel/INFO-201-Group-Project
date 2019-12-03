@@ -34,7 +34,7 @@ summary_info <- filter_test_df %>%
 # create a dataframe for the graph
 graph_df <- summary_info %>%
   arrange(-avg_emission) %>%
-  head(10)
+  head(20)
 
 # create the graph
 emissions <- ggplot(data = graph_df,
@@ -42,10 +42,10 @@ emissions <- ggplot(data = graph_df,
                         y = avg_emission)) +
   coord_flip() +
   geom_bar(stat="identity", fill="burlywood2") +
-  geom_text(aes(label = as.integer(avg_emission)), vjust = 3, size= 3.5) +
+  geom_text(aes(label = round(avg_emission, 2)), vjust = 3, size= 3.5) +
   theme_minimal() +
   labs(
-    title = "Top 10 Polluting Car Manufacturers",
+    title = "Top 20 Polluting Car Manufacturers",
     x = "Car Manufacturer",
     y = "Average Carbon Monoxide Emitted (g/mi)"
   )

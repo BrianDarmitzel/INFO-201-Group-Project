@@ -1,4 +1,5 @@
 library("dplyr")
+library("stringr")
 
 # load in filtered data set
 emissions_data <- read.csv(unz("data/filtered_datasets.zip",

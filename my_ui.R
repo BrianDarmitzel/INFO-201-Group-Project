@@ -1,3 +1,5 @@
+library(plotly)
+
 # create UI
 my_ui <- fluidPage(
   theme = shinythemes::shinytheme("flatly"),

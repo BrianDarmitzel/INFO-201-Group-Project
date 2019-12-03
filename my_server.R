@@ -20,8 +20,17 @@ my_server <- function(input, output, session) {
   })
   
   output$brand_info_table <- renderTable({
-    filtered_table <- all_brands %>%
-      filter(`Vehicle Manufacturer` == input$car_brand)
+    filtered_table <- all_cars %>%
+      group_by(`Vehicle Manufacturer`) %>%
+      summarize(average_emission_emitted = sum(Emission_Emitted) / n(),
+                `Average city MPG` = sum(Average.city.MPG) / n(),
+                `Average highway MPG` = sum(Average.highway.MPG) / n(),
+                `Combined MPG` = sum(Combined.MPG) / n(),
+                `Annual gas Consumption in Barrels` = sum(Annual.gas.Consumption.in.Barrels) / n(),
+                `Tailpipe Emissions in g/mi` = sum(Tailpipe.Emissions.in.g.mi) / n(),
+                `Annual Fuel Cost` = sum(Annual.Fuel.Cost) / n(),
+                `Cost Savings for Gas over 5 Years` = sum(Cost.Savings.for.Gas.over.5.Years) / n()) %>%
+       filter(`Vehicle Manufacturer` == input$car_brand)
     
     table <- data.frame(
       Variable = c("Average Carbon Monoxide Emission Emitted (g/mi)",

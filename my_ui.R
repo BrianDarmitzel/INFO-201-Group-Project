@@ -1,6 +1,6 @@
 # create UI
 my_ui <- fluidPage(
-  
+  theme = shinythemes::shinytheme("flatly"),
   # Title of our project
   titlePanel("Green Car Research Project"),
   

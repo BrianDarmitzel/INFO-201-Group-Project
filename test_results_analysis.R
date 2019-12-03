@@ -41,7 +41,7 @@ emissions <- ggplot(data = graph_df,
                     aes(x = reorder(Represented.Test.Vehicle.Make, avg_emission),
                         y = avg_emission)) +
   coord_flip() +
-  geom_bar(stat="identity", fill="steelblue") +
+  geom_bar(stat="identity", fill="burlywood2") +
   geom_text(aes(label = as.integer(avg_emission)), vjust = 3, size= 3.5) +
   theme_minimal() +
   labs(

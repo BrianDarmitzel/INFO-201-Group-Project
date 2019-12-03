@@ -37,10 +37,13 @@ graph_df <- summary_info %>%
   head(10)
 
 # create the graph
-emissions <- ggplot(data = graph_df) +
-  geom_col(mapping = aes(
-    x = reorder(Represented.Test.Vehicle.Make, avg_emission),
-    y = avg_emission)) + coord_flip() +
+emissions <- ggplot(data = graph_df,
+                    aes(x = reorder(Represented.Test.Vehicle.Make, avg_emission),
+                        y = avg_emission)) +
+  coord_flip() +
+  geom_bar(stat="identity", fill="steelblue") +
+  geom_text(aes(label = as.integer(avg_emission)), vjust = 3, size= 3.5) +
+  theme_minimal() +
   labs(
     title = "Top 10 Polluting Car Manufacturers",
     x = "Car Manufacturer",

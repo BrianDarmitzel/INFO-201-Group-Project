@@ -1,4 +1,6 @@
 library("dplyr")
+library("stringr")
+library("plotly")
 
 # load in filtered data set
 emissions_data <- read.csv(unz("data/filtered_datasets.zip",
@@ -40,14 +42,37 @@ all_brands <- merge(x=brands1,y=brands2,by="Vehicle Manufacturer")
 all_cars <- merge(x=emissions_data, y=fuel_economy_data, by=c("Vehicle Manufacturer", "Vehicle Model")) %>%
   select(-Number.of.Models.in.Data)
 
-# View(emissions_data)
-# View(fuel_economy_data)
-# View(brands1)
-# View(brands2)
-# View(all_brands)
-# View(all_cars)
 
-# write.csv(all_brands, "data/filtered_datasets/combined_car_brands.csv",
-#           row.names = FALSE)
-# write.csv(all_cars, "data/filtered_datasets/combined_car_models.csv",
-#           row.names = FALSE)
+
+averages <- as.vector(lapply(all_cars[3:10], mean), mode = "numeric")
+
+#graph_ranking <- function(car_model) {
+  data <- all_cars %>%
+    filter(`Vehicle Model` == "ILX")
+  
+  columns <- colnames(data)[3:10]
+  nums <- data[3:10] - averages
+  
+
+  color_map <- c()
+  for (x in colnames(nums)[1:8]) {
+    print(nums[[x]])
+
+    if(nums[[x]] < 0) {
+      color_map[x] <- c("Data" = "red")
+    } else {
+      color_map[x] <- c("Data" = "blue")
+    }
+  }
+  View(color_map)
+  
+  plot_ly() %>%
+  add_bars(
+    x = columns,
+    y = as.vector(nums, mode = "numeric"),
+    marker = list(color = color_map[columns]),
+    name = "placeholder"
+  )
+#}
+
+graph_ranking("ILX")

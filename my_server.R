@@ -64,12 +64,12 @@ my_server <- function(input, output, session) {
   })
   
   output$description_brand <- renderText({
-    message <- paste0(("Statistics on "), input$car_brand)
+    message <- paste0(("Statistics for "), input$car_brand)
     message
   })
   
   output$description_model <- renderText({
-    message <- paste0(("Statistics on "), input$car_model)
+    message <- paste0(("Statistics for the "), input$car_brand, " ",input$car_model)
     message
   })
   

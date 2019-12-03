@@ -57,10 +57,10 @@ my_ui <- fluidPage(
                
                sidebarPanel(
                  selectInput("car_brand",
-                             label = h3("Select Car Brand"),
+                             label = h3("Select Car Brand:"),
                              choices = all_brands$`Vehicle Manufacturer`),
                  selectInput("car_model",
-                             label = h3("Select Car Model of the Selected Brand"),
+                             label = h3("Select Car Model:"),
                              choices = "")
                  ),
                

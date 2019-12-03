@@ -1,6 +1,9 @@
 library("dplyr")
 library("stringr")
+<<<<<<< HEAD
 library("plotly")
+=======
+>>>>>>> af5a8c05a2683cea95a781f8249ea9ca687ab9fd
 
 # load in filtered data set
 emissions_data <- read.csv(unz("data/filtered_datasets.zip",
@@ -42,6 +45,7 @@ all_brands <- merge(x=brands1,y=brands2,by="Vehicle Manufacturer")
 all_cars <- merge(x=emissions_data, y=fuel_economy_data, by=c("Vehicle Manufacturer", "Vehicle Model")) %>%
   select(-Number.of.Models.in.Data)
 
+<<<<<<< HEAD
 
 
 averages <- as.vector(lapply(all_cars[3:10], mean), mode = "numeric")
@@ -76,3 +80,16 @@ averages <- as.vector(lapply(all_cars[3:10], mean), mode = "numeric")
 #}
 
 graph_ranking("ILX")
+=======
+# View(emissions_data)
+# View(fuel_economy_data)
+# View(brands1)
+# View(brands2)
+# View(all_brands)
+# View(all_cars)
+
+# write.csv(all_brands, "data/filtered_datasets/combined_car_brands.csv",
+#           row.names = FALSE)
+# write.csv(all_cars, "data/filtered_datasets/combined_car_models.csv",
+#           row.names = FALSE)
+>>>>>>> af5a8c05a2683cea95a781f8249ea9ca687ab9fd

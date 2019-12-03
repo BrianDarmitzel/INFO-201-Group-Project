@@ -49,7 +49,7 @@ plot_mpg <- function(dataset, variable) {
     type = "bar",
     x = round(dataset[[column[2]]], 1),
     y = reorder(dataset[[column[1]]], dataset[[column[2]]]),
-    marker = list(color = "deepskyblue",
+    marker = list(color = "cadetblue1",
                   line = list(color = "black", width = 1))) %>%
     layout(title = paste("Average", word(column[2], 2),
                          "MPG of Different Manufacturers"),

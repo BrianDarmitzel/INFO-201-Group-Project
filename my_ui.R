@@ -116,10 +116,18 @@ about_page <- tabPanel("About",
     "University of Washington",
   br(),
     "Autumn 2019",
+  br(),
+  h3("About the Tech"),
+  p("This app was developed on Shiny as an extention of R Studio. Our
+    data was found online through various government sources, and manipulated
+    with R to show what we wanted to present. Our data was mainly manipulated
+    with Dplyr, and our graphs were created with Plotly. Our Shiny UI included
+    a navbar page layout and used the 'flatly' theme included in shinythemes."),
   h3("Link to the Technical Report"),
   a("Technical Report",
     href = "https://github.com/BrianDarmitzel/INFO-201-Group-Project/wiki/INFO-201-GROUP-PROJECT-TECHNICAL-REPORT")
 )
+
 
 # create UI
 my_ui <- fluidPage(theme = shinytheme("flatly"),

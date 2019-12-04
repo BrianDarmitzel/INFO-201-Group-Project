@@ -1,6 +1,7 @@
 library(ggplot2)
 library(dplyr)
 library(plotly)
+library(gridExtra)
 
 # load in source files to use in creating graphs
 source("vehicles_analysis.r")
@@ -22,14 +23,15 @@ my_server <- function(input, output, session) {
   output$brand_info_table <- renderTable({
     filtered_table <- all_cars %>%
       group_by(`Vehicle Manufacturer`) %>%
-      summarize(average_emission_emitted = sum(Emission_Emitted) / n(),
-                `Average city MPG` = sum(Average.city.MPG) / n(),
-                `Average highway MPG` = sum(Average.highway.MPG) / n(),
-                `Combined MPG` = sum(Combined.MPG) / n(),
-                `Annual gas Consumption in Barrels` = sum(Annual.gas.Consumption.in.Barrels) / n(),
-                `Tailpipe Emissions in g/mi` = sum(Tailpipe.Emissions.in.g.mi) / n(),
-                `Annual Fuel Cost` = sum(Annual.Fuel.Cost) / n(),
-                `Cost Savings for Gas over 5 Years` = sum(Cost.Savings.for.Gas.over.5.Years) / n()) %>%
+      summarize(
+        `Average Emissions Emitted` = sum(`Average Emissions Emitted`) / n(),
+        `Average city MPG` = sum(`Average city MPG`) / n(),
+        `Average highway MPG` = sum(`Average highway MPG`) / n(),
+        `Combined MPG` = sum(`Combined MPG`) / n(),
+        `Annual gas Consumption in Barrels` = sum(`Annual gas Consumption in Barrels`) / n(),
+        `Tailpipe Emissions in g/mi` = sum(`Tailpipe Emissions in g/mi`) / n(),
+        `Annual Fuel Cost` = sum(`Annual Fuel Cost`) / n(),
+        `Cost Savings for Gas over 5 Years` = sum(`Cost Savings for Gas over 5 Years`) / n()) %>%
        filter(`Vehicle Manufacturer` == input$car_brand)
     
     table <- data.frame(
@@ -40,7 +42,7 @@ my_server <- function(input, output, session) {
                    "Average Combined Fuel Economy (mpg)",
                    "Average Annual Gas Consumption in Barrels",
                    "Average Annual Fuel Cost (usd)"),
-      Value = c(filtered_table$average_emission_emitted,
+      Value = c(filtered_table$`Average Emissions Emitted`,
                 filtered_table$`Tailpipe Emissions in g/mi`,
                 filtered_table$`Average city MPG`,
                 filtered_table$`Average highway MPG`,
@@ -54,7 +56,7 @@ my_server <- function(input, output, session) {
     filtered_table <- all_cars %>%
       filter(`Vehicle Manufacturer` == input$car_brand,
              `Vehicle Model` == input$car_model)
-    
+
     table <- data.frame(
       Variable = c("Average Carbon Monoxide Emission Emitted (g/mi)",
                    "Average Tailpipe Emissions (g/mi)",
@@ -63,14 +65,27 @@ my_server <- function(input, output, session) {
                    "Average Combined Fuel Economy (mpg)",
                    "Average Annual Gas Consumption in Barrels",
                    "Average Annual Fuel Cost (usd)"),
-      Value = c(filtered_table$Emission_Emitted,
-                filtered_table$Tailpipe.Emissions.in.g.mi,
-                filtered_table$Average.city.MPG,
-                filtered_table$Average.highway.MPG,
-                filtered_table$Combined.MPG,
-                filtered_table$Annual.gas.Consumption.in.Barrels,
-                filtered_table$Annual.Fuel.Cost))
+      Value = c(filtered_table$`Average Emissions Emitted`,
+                filtered_table$`Tailpipe Emissions in g/mi`,
+                filtered_table$`Average city MPG`,
+                filtered_table$`Average highway MPG`,
+                filtered_table$`Combined MPG`,
+                filtered_table$`Annual gas Consumption in Barrels`,
+                filtered_table$`Annual Fuel Cost`))
     table
+  })
+  
+  output$car_ranking <- renderPlotly({
+    p1 <- graph_ranking(input$car_model, "Average city MPG")
+    p2 <- graph_ranking(input$car_model, "Average highway MPG")
+    p3 <- graph_ranking(input$car_model, "Average Emissions Emitted")
+    p4 <- graph_ranking(input$car_model, "Combined MPG")
+    p5 <- graph_ranking(input$car_model, "Annual gas Consumption in Barrels")
+    p6 <- graph_ranking(input$car_model, "Tailpipe Emissions in g/mi")
+    p7 <- graph_ranking(input$car_model, "Annual Fuel Cost")
+    p8 <- graph_ranking(input$car_model, "Cost Savings for Gas over 5 Years")
+    subplot(p1,p2,p3,p4,p5,p6,p7,p8, margin = 0.05, nrows = 2) %>% 
+      layout(showlegend = F)
   })
   
   output$description_brand <- renderText({
@@ -85,10 +100,10 @@ my_server <- function(input, output, session) {
   
   observe({
     updateSelectInput(session, "car_model",
-                      choices = all_cars %>%
-                        filter(`Vehicle Manufacturer` == input$car_brand) %>%
-                        select(`Vehicle Model`) %>%
-                        pull()
+      choices = all_cars %>%
+        filter(`Vehicle Manufacturer` == input$car_brand) %>%
+        select(`Vehicle Model`) %>%
+        pull()
     )
   })
   

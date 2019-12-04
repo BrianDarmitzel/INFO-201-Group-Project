@@ -40,39 +40,77 @@ brands2 <- fuel_economy_data %>%
 all_brands <- merge(x=brands1,y=brands2,by="Vehicle Manufacturer")
 
 all_cars <- merge(x=emissions_data, y=fuel_economy_data, by=c("Vehicle Manufacturer", "Vehicle Model")) %>%
+  rename("Average Emissions Emitted" = Emission_Emitted,
+         "Average city MPG" = Average.city.MPG,
+         "Average highway MPG" = Average.highway.MPG,
+         "Combined MPG" = Combined.MPG,
+         "Annual gas Consumption in Barrels" = Annual.gas.Consumption.in.Barrels,
+         "Tailpipe Emissions in g/mi" = Tailpipe.Emissions.in.g.mi,
+         "Annual Fuel Cost" = Annual.Fuel.Cost,
+         "Cost Savings for Gas over 5 Years" = Cost.Savings.for.Gas.over.5.Years) %>% 
   select(-Number.of.Models.in.Data)
 
 
 
-averages <- as.vector(lapply(all_cars[3:10], mean), mode = "numeric")
+averages <- lapply(all_cars[3:10], mean)
 
-#graph_ranking <- function(car_model) {
-  data <- all_cars %>%
-    filter(`Vehicle Model` == "ILX")
+graph_ranking <- function(car_model, column) {
+  cars_avg <- all_cars %>% 
+    mutate(result = all_cars[[column]] - averages[[column]])
   
-  columns <- colnames(data)[3:10]
-  nums <- data[3:10] - averages
-  
-
+  data <- cars_avg %>% filter(`Vehicle Model` == car_model) %>% select(result)
+    
   color_map <- c()
-  for (x in colnames(nums)[1:8]) {
-    print(nums[[x]])
-
-    if(nums[[x]] < 0) {
-      color_map[x] <- c("Data" = "red")
+  if(data$result < 0) {
+    if(is.element(column, c("Average city MPG","Average highway MPG", "Combined MPG","Cost Savings for Gas over 5 Years"))) {
+      color_map[colnames(data)] <- c("data" = "red")
     } else {
-      color_map[x] <- c("Data" = "blue")
+      color_map[colnames(data)] <- c("data" = "blue")
     }
+    message <- paste(round(data$result, 1), "less<br>than average")
+  } else {
+    if(is.element(column, c("Average city MPG","Average highway MPG", "Combined MPG","Cost Savings for Gas over 5 Years"))) {
+      color_map[colnames(data)] <- c("data" = "blue")
+    } else {
+      color_map[colnames(data)] <- c("data" = "red")
+    }
+    message <- paste(round(data$result, 1), "more<br>than average")
   }
-  View(color_map)
   
   plot_ly() %>%
-  add_bars(
-    x = columns,
-    y = as.vector(nums, mode = "numeric"),
-    marker = list(color = color_map[columns]),
-    name = "placeholder"
-  )
-#}
+    add_bars(
+      x = column,
+      y = as.vector(data$result, mode = "numeric"),
+      marker = list(color = color_map[[colnames(data)]]),
+      text = round(as.vector(data$result, mode = "numeric"), 1),
+      hoverinfo = 'message',
+      textposition = "auto" 
+    ) %>%
+    layout(
+      yaxis = list(range = c(min(cars_avg[["result"]]), max(cars_avg[["result"]])))
+    )
+}
 
-graph_ranking("ILX")
+p1 <- graph_ranking("FIT EV", "Average Emissions Emitted")
+p2 <-graph_ranking("FIT EV", "Annual gas Consumption in Barrels")
+p3 <-graph_ranking("FIT EV", "Tailpipe Emissions in g/mi")
+p4 <-graph_ranking("FIT EV", "Annual Fuel Cost")
+p5 <- graph_ranking("FIT EV", "Average city MPG")
+p6 <- graph_ranking("FIT EV", "Average highway MPG")
+p7 <- graph_ranking("FIT EV", "Combined MPG")
+p8 <- graph_ranking("FIT EV", "Cost Savings for Gas over 5 Years")
+
+subplot(p1,p2,p3,p4,p5,p6,p7,p8, margin = 0.05, nrows = 2) %>% 
+  layout(showlegend = F)
+
+# More is better
+# Avg city MPG
+# Avy highway MPG
+# combined MPG
+# Cost savings for Gas
+
+# Less is better
+# Avg Emissions
+# Annual gas cons
+# Tailpipe Emission
+# Fuel Cost

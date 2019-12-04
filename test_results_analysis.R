@@ -2,6 +2,9 @@ library("dplyr")
 library("stringr")
 library("ggplot2")
 library("lintr")
+library("stringr")
+
+source("combine_data.R")
 
 # load in filtered data set
 test_df <- read.csv(unz("data/filtered_datasets.zip",
@@ -13,14 +16,12 @@ test_df$Represented.Test.Vehicle.Make <- str_to_upper(
 
 # filter the dataset further
 filter_test_df <- test_df %>%
-  select(Model.Year,
-         Represented.Test.Vehicle.Make,
+  select(Represented.Test.Vehicle.Make,
          Represented.Test.Vehicle.Model,
          Emission.Name,
          Rounded.Emission.Result..g.mi., ) %>%
   filter(Emission.Name == "CO") %>%
-  group_by(Model.Year,
-           Represented.Test.Vehicle.Make,
+  group_by(Represented.Test.Vehicle.Make,
            Represented.Test.Vehicle.Model) %>%
   summarize(Emission_Emitted = max(
     Rounded.Emission.Result..g.mi., na.rm = TRUE))
@@ -32,22 +33,26 @@ summary_info <- filter_test_df %>%
             total_emissions_emitted = sum(Emission_Emitted, na.rm = TRUE),
             avg_emission = total_emissions_emitted / num)
 
-# get the list of all car manufacturers
-select_list <- summary_info %>%
-  pull(Represented.Test.Vehicle.Make)
-
 # create a dataframe for the graph
-graph_df <- summary_info %>%
+graph_df <- all_cars %>%
+  group_by(`Vehicle Manufacturer`) %>%
+  summarize(avg_emission = sum(`Average Emissions Emitted`) / n()) %>%
   arrange(-avg_emission) %>%
-  head(10)
+  head(20)
 
 # create the graph
-emissions <- ggplot(data = graph_df) +
-  geom_col(mapping = aes(
-    x = reorder(Represented.Test.Vehicle.Make, avg_emission),
-    y = avg_emission)) + coord_flip() +
+emissions <- ggplot(data = graph_df,
+                    aes(x = reorder(`Vehicle Manufacturer`, avg_emission),
+                        y = avg_emission)) +
+  coord_flip() +
+  geom_bar(stat="identity", fill="burlywood2") +
+  geom_text(aes(label = round(avg_emission, 2)), vjust = 3, size= 3.5) +
+  theme_minimal() +
   labs(
-    title = "Top 10 Polluting Car Manufacturers",
+    title = "Top 20 Polluting Car Manufacturers",
     x = "Car Manufacturer",
     y = "Average Carbon Monoxide Emitted (g/mi)"
   )
+
+#write.csv(filter_test_df, "data/filtered_datasets/emissions_data.csv",
+#          row.names = FALSE)

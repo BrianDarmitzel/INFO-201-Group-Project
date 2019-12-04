@@ -1,6 +1,5 @@
 library(plotly)
 library(shinythemes)
-library(shinyWidgets)
     
 # Introduction to our project and our research questions
 intro_page <- tabPanel("Introduction",

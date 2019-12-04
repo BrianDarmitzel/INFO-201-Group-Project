@@ -1,5 +1,6 @@
 library(plotly)
 library(shinythemes)
+library(shinyWidgets)
     
 # Introduction to our project and our research questions
 intro_page <- tabPanel("Introduction",
@@ -33,8 +34,8 @@ visual_page <- tabPanel("Visualizations",
       selectInput(
         inputId = "viz_type",
         label = h3("Types of MPG"),
-        choices = c("city", "highway"),
-        selected = "city")),
+        choices = c("City", "Highway", "Combined"),
+        selected = "City")),
     
     mainPanel(
       plotlyOutput(outputId = "fuel_econ_plot"))
@@ -77,25 +78,29 @@ search_page <- tabPanel("Search",
 # Create a tab where our conclusion can be seen
 closing_page <- tabPanel("Conclusion",
   h3("Conclusion"),
-  p("It is noticed that car brands such as Tesla, CODA Automotive, and
-    BYD, are the car manufacturers which make the most eco-friendly and
-    fuel efficient cars. We think this is because these car brands
-    mostly produce electric and hybrid cars which require some or no
-    fuel. Technological advancement has now made it possible to produce
-    more eco friendly cars which consume very less fuel, and more and
-    more car manufacturers are moving towards manufacturing such
-    cars."),
-  p("As seen in the CO emissions plot, Mosler, MV, and Hummer are the
-    top 3 polluting car manufacturers, while Tesla would be the most
-    environmentally friendly car brand in the list. By selecting the
-    data from search part, we found a trend that many car brands are
-    continually updating. For example, the 2004 BMW emitted 1.6 CO (g/ml)
-    while the 2010 BMW only emitted 0.36 CO. This number dramatically
-    decrease within six years, which means that some car manufacturers
-    did pay attention to the pollution issue and aim to improve the
-    engines with the latest technology. For the fuel economy plot,
-    Tesla, CODA Automative, and BYD are the top brands who make the
-    most fuel efficient cars."),
+  p("From the Average MPG Visualizations, it is clear that Tesla is way ahead
+    of all other manufacturers in terms of fuel-efficiency of its cars.
+    Honda, Jaguar, and Mercedes-Benz make the next most fuel-efficient cars.
+    Their cars provide the highest mileage, meaning that their cars can cover
+    more miles per gallon of gas."),
+  p("The CO emissions plot reveals that GMC manufactures cars that emit the
+    most amount of Carbon-Monoxide, followed by manufacturers like RAM and
+    Spyker. Cars manufactured by these brands are the least
+    environmental-friendly and cause the most harm to the environment as
+    Carbon-Monoxide is one of the most harmful pollutants."),
+  p("Additionally, the search feature helps reveal various factors about
+    numerous car models which help determine how eco-friendly a car is.
+    The charts also help compare a particular car with all the other cars
+    in the dataset. Upon selecting Tesla, it can be seen that all the charts
+    for Tesla cars are blue colored, indicating Tesla cars are more
+    eco-friendly than other car brands."),
+  p("We think that cars manufactured by Tesla are the most eco-friendly and
+    provide the highest mileage because Tesla produces electric and hybrid
+    cars that require some or no fuel. Manufacturers like Honda, Jaguar,
+    and Mercedes-Benz are also trying to switch to manufacturing electric
+    and hybrid cars. Technological advancement has now made it possible to
+    produce more eco-friendly cars which consume very little fuel, and more
+    and more car manufacturers are moving towards manufacturing such cars.")
 )
     
 # Create a tab explaining our team / resources
@@ -114,10 +119,7 @@ about_page <- tabPanel("About",
     "Autumn 2019",
   h3("Link to the Technical Report"),
   a("Technical Report",
-    href = "https://github.com/BrianDarmitzel/INFO-201-Group-Project/wiki/INFO-201-GROUP-PROJECT-TECHNICAL-REPORT"),
-  h3("Github Repository"),
-  a("Our Github Repository",
-    href = "https://github.com/BrianDarmitzel/INFO-201-Group-Project")
+    href = "https://github.com/BrianDarmitzel/INFO-201-Group-Project/wiki/INFO-201-GROUP-PROJECT-TECHNICAL-REPORT")
 )
 
 # create UI

@@ -4,6 +4,8 @@ library("ggplot2")
 library("lintr")
 library("stringr")
 
+source("combine_data.R")
+
 # load in filtered data set
 test_df <- read.csv(unz("data/filtered_datasets.zip",
                         "filtered_datasets/test_filtered_2009_present.csv"))
@@ -32,13 +34,15 @@ summary_info <- filter_test_df %>%
             avg_emission = total_emissions_emitted / num)
 
 # create a dataframe for the graph
-graph_df <- summary_info %>%
+graph_df <- all_cars %>%
+  group_by(`Vehicle Manufacturer`) %>%
+  summarize(avg_emission = sum(`Average Emissions Emitted`) / n()) %>%
   arrange(-avg_emission) %>%
   head(20)
 
 # create the graph
 emissions <- ggplot(data = graph_df,
-                    aes(x = reorder(Represented.Test.Vehicle.Make, avg_emission),
+                    aes(x = reorder(`Vehicle Manufacturer`, avg_emission),
                         y = avg_emission)) +
   coord_flip() +
   geom_bar(stat="identity", fill="burlywood2") +

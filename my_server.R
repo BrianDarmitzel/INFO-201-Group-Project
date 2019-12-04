@@ -12,10 +12,12 @@ source("combine_data.R")
 my_server <- function(input, output, session) {
   
   output$fuel_econ_plot <- renderPlotly({
-    if (input$viz_type == "city") {
+    if (input$viz_type == "City") {
       fuel_econ <- plot_mpg(city_mpg)
-    } else {
+    } else if (input$viz_type == "Highway") {
       fuel_econ <- plot_mpg(highway_mpg)
+    } else {
+      fuel_econ <- plot_mpg(combined_mpg)
     }
     fuel_econ
   })

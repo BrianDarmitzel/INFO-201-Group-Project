@@ -78,12 +78,12 @@ my_server <- function(input, output, session) {
   output$car_ranking <- renderPlotly({
     p1 <- graph_ranking(input$car_model, "Average city MPG")
     p2 <- graph_ranking(input$car_model, "Average highway MPG")
-    p3 <- graph_ranking(input$car_model, "Average Emissions Emitted")
+    p3 <- graph_ranking(input$car_model, "Cost Savings for Gas over 5 Years")
     p4 <- graph_ranking(input$car_model, "Combined MPG")
     p5 <- graph_ranking(input$car_model, "Annual gas Consumption in Barrels")
     p6 <- graph_ranking(input$car_model, "Tailpipe Emissions in g/mi")
     p7 <- graph_ranking(input$car_model, "Annual Fuel Cost")
-    p8 <- graph_ranking(input$car_model, "Cost Savings for Gas over 5 Years")
+    p8 <- graph_ranking(input$car_model, "Average Emissions Emitted")
     subplot(p1,p2,p3,p4,p5,p6,p7,p8, margin = 0.05, nrows = 2) %>% 
       layout(showlegend = F)
   })
@@ -105,6 +105,22 @@ my_server <- function(input, output, session) {
         select(`Vehicle Model`) %>%
         pull()
     )
+  })
+  
+  output$ranking_title <- renderText({
+    message <- paste0("How the ", input$car_brand, " ", input$car_model,
+                      " compares to the average of all cars in our dataset")
+  })
+  
+  output$ranking_description <- renderText({
+    message <- "These charts compare the selected car to all other cars that
+    we have in our dataset. The values shown on the bars represent how much
+    above or below average the selected car is in relation to all other cars in our data.
+    If the number shown is worse than the average value of all other cars, then the 
+    column will be shown in red. If the number shown is better than the average value of
+    all other cars, then it will be shown in blue. For example, a lower MPG and higher gas
+    consumption will both be shown as red on the graph, and higher gas savings and lower fuel
+    costs will both be shown in blue. "
   })
   
   output$emissions_graph <- renderPlot({

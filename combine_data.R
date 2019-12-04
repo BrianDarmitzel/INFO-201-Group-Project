@@ -91,26 +91,14 @@ graph_ranking <- function(car_model, column) {
     )
 }
 
-p1 <- graph_ranking("FIT EV", "Average Emissions Emitted")
-p2 <-graph_ranking("FIT EV", "Annual gas Consumption in Barrels")
-p3 <-graph_ranking("FIT EV", "Tailpipe Emissions in g/mi")
-p4 <-graph_ranking("FIT EV", "Annual Fuel Cost")
-p5 <- graph_ranking("FIT EV", "Average city MPG")
-p6 <- graph_ranking("FIT EV", "Average highway MPG")
-p7 <- graph_ranking("FIT EV", "Combined MPG")
-p8 <- graph_ranking("FIT EV", "Cost Savings for Gas over 5 Years")
+p1 <- graph_ranking("FIT EV", "Average city MPG")
+p2 <- graph_ranking("FIT EV", "Average highway MPG")
+p3 <- graph_ranking("FIT EV", "Combined MPG")
+p4 <- graph_ranking("FIT EV", "Cost Savings for Gas over 5 Years")
+p5 <- graph_ranking("FIT EV", "Average Emissions Emitted")
+p6 <-graph_ranking("FIT EV", "Annual gas Consumption in Barrels")
+p7 <-graph_ranking("FIT EV", "Tailpipe Emissions in g/mi")
+p8 <-graph_ranking("FIT EV", "Annual Fuel Cost")
 
 subplot(p1,p2,p3,p4,p5,p6,p7,p8, margin = 0.05, nrows = 2) %>% 
   layout(showlegend = F)
-
-# More is better
-# Avg city MPG
-# Avy highway MPG
-# combined MPG
-# Cost savings for Gas
-
-# Less is better
-# Avg Emissions
-# Annual gas cons
-# Tailpipe Emission
-# Fuel Cost

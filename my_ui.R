@@ -1,17 +1,5 @@
 library(plotly)
 library(shinythemes)
-
-# create UI
-my_ui <- fluidPage(theme = shinytheme("flatly"),
-  # Create tabs to navigate different sections of our project
-  navbarPage("Green Car Research Project",
-    intro_page,
-    visual_page,
-    search_page,
-    closing_page,
-    about_page
-  )
-)
     
 # Introduction to our project and our research questions
 intro_page <- tabPanel("Introduction",
@@ -81,6 +69,8 @@ search_page <- tabPanel("Search",
       br()
     )
   ),
+  h3(textOutput(outputId = "ranking_title")),
+  textOutput(outputId = "ranking_description"),
   plotlyOutput(outputId = "car_ranking")
 )
 
@@ -130,3 +120,14 @@ about_page <- tabPanel("About",
     href = "https://github.com/BrianDarmitzel/INFO-201-Group-Project")
 )
 
+# create UI
+my_ui <- fluidPage(theme = shinytheme("flatly"),
+  # Create tabs to navigate different sections of our project
+  navbarPage("Green Car Research Project",
+    intro_page,
+    visual_page,
+    search_page,
+    closing_page,
+    about_page
+  )
+)

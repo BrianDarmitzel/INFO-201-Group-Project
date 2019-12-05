@@ -1,5 +1,6 @@
 library(plotly)
 library(shinythemes)
+library(shiny)
     
 # Introduction to our project and our research questions
 intro_page <- tabPanel("Introduction",
@@ -35,11 +36,11 @@ visual_page <- tabPanel("Visualizations",
         label = h3("Types of MPG"),
         choices = c("City", "Highway", "Combined"),
         selected = "City")),
-    
+
     mainPanel(
       plotlyOutput(outputId = "fuel_econ_plot"))
   ),
-  
+
   h2("Carbon Monoxide (CO) Emissions Visualization"),
   plotOutput(outputId = "emissions_graph")
 )
@@ -49,7 +50,7 @@ visual_page <- tabPanel("Visualizations",
 search_page <- tabPanel("Search",
   sidebarLayout(
     sidebarPanel(
-      
+
       selectInput("car_brand",
         label = h3("Select Car Brand"),
         choices = all_cars$`Vehicle Manufacturer`,
@@ -59,7 +60,7 @@ search_page <- tabPanel("Search",
         label = h3("Select Car Model of the Selected Brand"),
         choices = "")
       ),
-    
+
     mainPanel(
       h3(textOutput(outputId = "description_brand")),
       tableOutput(outputId = "brand_info_table"),
@@ -91,8 +92,9 @@ closing_page <- tabPanel("Conclusion",
     numerous car models which help determine how eco-friendly a car is.
     The charts also help compare a particular car with all the other cars
     in the dataset. Upon selecting Tesla, it can be seen that all the charts
-    for Tesla cars are blue colored, indicating Tesla cars are more
+    for Tesla cars are blue colored indicating Tesla cars are more
     eco-friendly than other car brands."),
+  
   p("We think that cars manufactured by Tesla are the most eco-friendly and
     provide the highest mileage because Tesla produces electric and hybrid
     cars that require some or no fuel. Manufacturers like Honda, Jaguar,

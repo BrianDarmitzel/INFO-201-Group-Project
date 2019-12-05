@@ -45,14 +45,11 @@ emissions <- ggplot(data = graph_df,
                     aes(x = reorder(`Vehicle Manufacturer`, avg_emission),
                         y = avg_emission)) +
   coord_flip() +
-  geom_bar(stat="identity", fill="burlywood2") +
-  geom_text(aes(label = round(avg_emission, 2)), vjust = 3, size= 3.5) +
+  geom_bar(stat = "identity", fill = "burlywood2") +
+  geom_text(aes(label = round(avg_emission, 2)), vjust = 3, size = 3.5) +
   theme_minimal() +
   labs(
     title = "Top 20 Polluting Car Manufacturers",
     x = "Car Manufacturer",
     y = "Average Carbon Monoxide Emitted (g/mi)"
   )
-
-#write.csv(filter_test_df, "data/filtered_datasets/emissions_data.csv",
-#          row.names = FALSE)

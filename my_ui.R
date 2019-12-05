@@ -125,7 +125,7 @@ about_page <- tabPanel("About",
     a navbar page layout and used the 'flatly' theme included in shinythemes."),
   h3("Link to the Technical Report"),
   a("Technical Report",
-    href = "https://github.com/BrianDarmitzel/INFO-201-Group-Project/wiki/INFO-201-GROUP-PROJECT-TECHNICAL-REPORT")
+    href = "https://github.com/BrianDarmitzel/INFO-201-Group-Project/wiki/Page-1:-INFO-201-GROUP-PROJECT-TECHNICAL-REPORT:-Introduction-and-Research-Questions")
 )
 
 
